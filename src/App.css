@@ -1,1 +1,177 @@
+body{
+    overflow-x: hidden;
+}
+.txt{
+    text-align: center;
+}
+.sec4bg{
+    background-size: cover;
+}
+.SM{
+    color:pink;
+    margin-right: 20px;
+}
+.sec6txt{
+    font-size:60px;
+    text-align: center;
+}
+.who{
+    color:white;
+    position: absolute;
+    bottom:150px;
+    right: 150px;
+    font-size: 50px;
+}
+.the{
+    position: absolute;
+    top:500px;
+    left:100px;
+    font-weight: 700;
+    line-height: 1;
+}
+.sec1_img{
+ display: inline-block;  
+}
+.img1{
+    position: absolute;
+    top:280px;
+    left:-100px;
+    z-index: 10;
+}
+.img2{
+    position: absolute;
+    top:300px;
+    left:122px;
+    z-index: 10;
+}
+.img3{
+    position: absolute;
+    top:0;
+    left:640px;
+}
+.img4{
+    position: absolute;
+    top:-200px;
+    left:620px;
+}
+.img5{
+    position: absolute;
+    top:105px;
+    left:1332px;
+}
+.img6{
+    position: absolute;
+    top:735px;
+    left:1456px;
+}
+.sec5{
+    height:1080px;
+}
+.sec5txt{
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 
+}
+.sec5txt1{
+    display: block;
+    font-size: 30px;
+}
+.sec5txt2{
+    display: block;
+    font-size: 50px;
+}
+.sec5{
+    position: relative;
+}
+.sec5img3{
+    position: absolute;
+    top:15%;
+    left:5%;
+}
+.sec5img1{
+    position: absolute;
+    top:20%;
+    right:5%;
+}
+.sec5img2{
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%,-50%);
+}
+.sec6txt{
+    padding: 50px;
+}
+.sec6txt1{
+    font-size: 22px;
+}
+.sec6img1{
+    width: 1264px;
+}
+.sec6img2{
+    vertical-align: bottom;
+}
+.sec6img3{
+    margin-left: 623px;
+}
+.sec6img4{
+    float:right
+}
+.sec6img5{
+    width:624px
+}
+.sec6img6{
+    float: right;
+}
+.sec6img7{
+    float:left;
+    width:624px;
+    height:770px ;
+}
+.sec6img9{
+    width:1264px;
+}
+.sec7_02bg{
+    background-repeat: no-repeat;
+    position: absolute;
+    top:20%;
+    right:2%;
+    width:622px;
+    height:293px
+}
+.sec7txt{
+    font-size: 50px;
+    text-align: left;
+    margin-left: 500px;
+}
+.SM30{
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom:0;
+    right: 2%;
+    width:622px;
+    height:293px
+}
+.sec7_01{
+    position: absolute;
+    top:-180px;
+    left:300px;
+}
+.sec7_02{
+    position: absolute;
+    top:0;
+    left:200px;
+}
+.gwangya{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+.smtowntxt{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
