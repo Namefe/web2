@@ -36,13 +36,13 @@ function App() {
   const Header = () => (
     <header className="absolute top-4 left-0 w-full flex justify-between items-center p-4 sm:p-6 z-10">
       <div className="flex items-center gap-2 relative">
-        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-12"/>
-        <span className="text-xs sm:text-sm tracking-widest font-semibold ml-2">
+        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4"/>
+        <span className="text-xs sm:text-sm tracking-widest font-semibold ml-12">
           SM<br />ENTERTAINMENT
         </span>
       </div>
       <button className="text-white text-xl sm:text-2xl">
-        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8"/>
+        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4"/>
       </button>
     </header>
   );
@@ -61,9 +61,9 @@ function App() {
           <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
           <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
         </div>
-        <div className="the absolute top-[280px] left-[70px] sm:top-[250px] sm:left-[150px]">
-          <div className="text-[50px] sm:text-[100px] block w-fit">THE CULTURE,</div>
-          <div className="text-[50px] sm:text-[100px] block w-fit">THE FUTURE</div>
+        <div className="the absolute top-[280px] left-[70px] sm:top-[400px] sm:left-[150px]">
+          <div className="text-[50px] sm:text-[150px] m-0 block w-fit">THE CULTURE,</div>
+          <div className="text-[50px] sm:text-[150px] m-0 block w-fit">THE FUTURE</div>
         </div>
   
         <div>
@@ -71,7 +71,7 @@ function App() {
           <div className="scroll">
             <img className="cursor-pointer pointer-events-auto w-8 sm:w-12" src={process.env.PUBLIC_URL + '/scroll.png'} />
           </div>
-          <div className="absolute bottom-[350px] right-[90px] sm:right-8 text-xs sm:text-base font-medium">
+          <div className="absolute bottom-[350px] right-[90px] sm:bottom-[30px] sm:right-[50px] text-xs sm:text-base font-medium">
             <span className="opacity-90 text-[30px] sm:text-[35px]">We invest in the future.</span>
           </div>
         </div>
@@ -131,8 +131,8 @@ function App() {
     <section className="sec4bg w-auto text-white  bg-contain" style={{backgroundImage:`url(${process.env.PUBLIC_URL}/sec4_bg.png)`}}>
         <div className='relative'>
           <div className='sec5txt '>
-            <div className='sec5txt1 text-[20px] lg:text-2xl xl:text-[20px]'>SM Entertainment는</div>
-            <div className='sec5txt2 text-[25px] font-bold lg:text-2xl xl:text-[40px]'>K-Culture의 미래를 설계합니다.</div>
+            <div className='sec5txt1 text-[20px] lg:text-2xl xl:text-[30px] xl:m-4'>SM Entertainment는</div>
+            <div className='sec5txt2 text-[25px] font-bold lg:text-2xl xl:text-[60px]'>K-Culture의 미래를 설계합니다.</div>
             </div>
             <div className='sec5'>
             <img className='sec5img1 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>

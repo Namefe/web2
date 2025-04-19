@@ -31,7 +31,7 @@ html, body, #root {
 
 .scroll{
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -42,39 +42,41 @@ html, body, #root {
 
 .img1{
     position: absolute;
-    top:150px;
-    left:-200px;
+    top:200px;
+    left:-220px;
     z-index: 10;
-    scale:0.6
+    scale:0.8
 }
 .img2{
     position: absolute;
-    top:10px;
-    left:-200px;
+    top:200px;
+    left:0px;
     z-index: 10;
-    scale:0.6
+    scale:0.8
 }
 .img3{
     position: absolute;
-    scale: 0.6;
-    top:-10px;
+    top:-100px;
     left:300px;
+    scale:0.7
 }
 .img4{
     position: absolute;
-    scale:0.6;
-    top:150px;
-    left:-200px;
+    top:-600px;
+    left:500px;
+    scale:0.8
 }
 .img5{
     position: absolute;
-    scale:0.6;
-    left:60%
+    top:100px;
+    right:300px;
+    scale:0.8
+
 }
 .img6{
     position: absolute;
-    scale:0.6;
-    right: 0;
+    top:600px;
+    right:-200px;
 }
 .country{
     transform: translate(-50%,-50%);
@@ -88,7 +90,6 @@ html, body, #root {
     top:20%;
     left:50%;
     transform: translate(-50%,-50%);
-    width:400px
 }
 .sec5txt1{
     display: block;
@@ -192,4 +193,8 @@ html, body, #root {
         left:40%;
         scale:0.4;
     }
+    .sec5txt{
+        width:400px;
+    }
+
 }
