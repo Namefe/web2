@@ -1,6 +1,4 @@
-body html{
-    overflow-x: hidden ;
-}
+
 html, body, #root {
     height: 100%;
     margin: 0;
@@ -44,7 +42,6 @@ html, body, #root {
     position: absolute;
     top:200px;
     left:-220px;
-    z-index: 10;
     scale:0.8
 }
 .img2{
@@ -81,27 +78,18 @@ html, body, #root {
 .country{
     transform: translate(-50%,-50%);
 }
-.sec5{
-    height:1080px;
-}
+
 .sec5txt{
-    text-align: center;
-    position: absolute;
-    top:20%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
-.sec5txt1{
-    display: block;
-}
-.sec5txt2{
-    display: block;
-}
-.sec5{
-    position: relative;
-    height: 2400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
 }
 
+.sec5{
+    position: relative;
+}
 .sec5img1{
     position: absolute;
     top:15%;
@@ -149,6 +137,7 @@ html, body, #root {
 .policy{
     margin-right: 90px;
 }
+
 
 @media (max-width:639px){
     .scroll{

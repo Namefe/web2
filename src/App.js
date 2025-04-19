@@ -1,19 +1,11 @@
 
-import Aos from 'aos';
 import './App.css';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
-import "aos/dist/aos.css";
 
 function App() {
 
 
-  useEffect(() => {
-    Aos.init({
-      duration: 800, // 애니메이션 시간 (ms)
-      once: false,    // 한 번만 작동할지 여부
-    });
-  }, []);
 
 
   const fadeInVariants = {
@@ -42,7 +34,7 @@ function App() {
         </span>
       </div>
       <button className="text-white text-xl sm:text-2xl">
-        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4"/>
+        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4 hover:cursor-pointer"/>
       </button>
     </header>
   );
@@ -53,9 +45,17 @@ function App() {
       <Header />
   
       <section>
-        <div className='sec1_img w-full h-full relative'>
-          <img className='img1' src={process.env.PUBLIC_URL + '/1.png'} />
-          <img className='img2' src={process.env.PUBLIC_URL + '/2.png'} />
+        <div className='sec1_img w-full h-full relative z-10'>
+          <div className='img1'>
+          <img className='inline-block relative z-50'  src={process.env.PUBLIC_URL + '/1.png'} />
+          <div className='backdrop-blur-md w-[160px] h-[750px] inline-block absolute top-[-45px] right-[230px]  rotate-[319deg]'
+          style={{ borderRadius: '50px 0 110px 80px' }}></div>
+          </div>
+          <div className='img2 '>
+          <img className='relative z-10' src={process.env.PUBLIC_URL + '/2.png'} />
+          <div className=' backdrop-blur-md w-[550px] h-[115px] inline-block absolute top-[165px] left-[165px] rotate-[23deg]'
+          style={{ borderRadius: '100px' }}></div>
+          </div>
           <img className='img3' src={process.env.PUBLIC_URL + '/3.png'} />
           <img className='img4' src={process.env.PUBLIC_URL + '/4.png'} />
           <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
@@ -68,15 +68,15 @@ function App() {
   
         <div>
           <div className="absolute bottom-4 left-4 text-xs sm:text-base font-medium hidden 2xl:block">Introduction</div>
-          <div className="scroll">
-            <img className="cursor-pointer pointer-events-auto w-8 sm:w-12" src={process.env.PUBLIC_URL + '/scroll.png'} />
+          <div className="scroll hover:cursor-pointer">
+            <img className="cursor-pointer pointer-events-auto w-8 sm:w-12 " src={process.env.PUBLIC_URL + '/scroll.png'} />
           </div>
-          <div className="absolute bottom-[350px] right-[90px] sm:bottom-[30px] sm:right-[50px] text-xs sm:text-base font-medium">
+          <div className="absolute bottom-[350px] right-[90px] sm:bottom-[30px] sm:right-[50px] text-xs sm:text-base font-medium z-30">
             <span className="opacity-90 text-[30px] sm:text-[35px]">We invest in the future.</span>
           </div>
         </div>
   
-        <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 border border-white/50 rounded-full w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] z-10" style={{ backdropFilter: 'blur(2px)' }}>
+        <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 border border-white/50 rounded-full hover:cursor-pointer w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] z-10" style={{ backdropFilter: 'blur(2px)' }}>
           <img onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={process.env.PUBLIC_URL + '/top.png'} alt="top" className="w-full h-full"/>
         </div>
   
@@ -128,26 +128,35 @@ function App() {
 </div>
     {/*------------------------------------------------------------- section4 끝 --------------------------------------------*/}
 
-    <section className="sec4bg w-auto text-white  bg-contain" style={{backgroundImage:`url(${process.env.PUBLIC_URL}/sec4_bg.png)`}}>
-        <div className='relative'>
-          <div className='sec5txt '>
-            <div className='sec5txt1 text-[20px] lg:text-2xl xl:text-[30px] xl:m-4'>SM Entertainment는</div>
-            <div className='sec5txt2 text-[25px] font-bold lg:text-2xl xl:text-[60px]'>K-Culture의 미래를 설계합니다.</div>
+    <section className="relative sec4bg w-auto text-white  bg-contain">
+    <video
+    autoPlay
+    muted
+    loop
+    className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+  >
+    <source src={process.env.PUBLIC_URL + "/videoplayback.mp4"} type="video/mp4" />
+  </video>
+
+        <div className='relative h-[300vh]'>
+          <div className='sec5txt h-[100vh]'>
+            <div className='text-[20px] lg:text-2xl xl:text-[30px] xl:m-4'>SM Entertainment는</div>
+            <div className='text-[25px] font-bold lg:text-2xl xl:text-[60px]'>K-Culture의 미래를 설계합니다.</div>
             </div>
-            <div className='sec5'>
-            <img className='sec5img1 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
-            <img className='sec5img2 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
-            <img className='sec5img3 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
-            <img className='sec5img4 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
-            <img className='sec5img5 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
-            <img className='sec5img6 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
-            <img className='sec5img7 w-1/2 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_02.png'}></img>
+            <div className='sec5 mix-blend-screen'>
+            <img className='sec5img1 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
+            <img className='sec5img2 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
+            <img className='sec5img3 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
+            <img className='sec5img4 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
+            <img className='sec5img5 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
+            <img className='sec5img6 w-1/3 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_03.png'}></img>
+            <img className='sec5img7 w-1/2 h-auto object-contain' src={process.env.PUBLIC_URL + '/sec4_02.png'}></img>
             </div>
             </div>
       </section>
     {/* -------------------------------------------------------------------section5 끝-------------------------------------------- */}
-    <section  className="pc hidden md:block w-full bg-black text-white font-bold px-4 py-12">
-  <div className="text-center mb-12">
+    <section  className="pc hidden md:block w-full bg-black text-white font-bold px-0 py-12 z-20">
+  <div className="text-center mb-12 py-10">
     <div className="text-4xl inline-block mr-2 text-pink-300">SM</div>
     <div className="text-4xl inline-block">ARTISTS</div>
     <div className="text-sm mt-4">SM의 빛나는 성장을 함께한 주요 아티스트</div>
@@ -155,79 +164,79 @@ function App() {
   <div className="grid grid-cols-12 gap-0  inline-block overflow-hidden"> 
     <div className="col-span-8 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm6.png'} className="col-span-8 object-cover w-full h-auto transition duration-300 group-hover:brightness-50 group-hover:scale-105"/>
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="text-white  font-bold text-[30px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className=" absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
   </div>
   </div>
   <div className="self-end col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm12.png'} className="block col-span-4  w-full self-end transition duration-300 group-hover:brightness-50 group-hover:scale-105"/>
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
   </div>
     </div>
     <div className="col-span-4" />
     <div className=" col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm8.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className=" col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm9.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className='col-span-4 w-full'>
     <div className=" col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm7.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className=" col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm1.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     </div>
     <div className='col-span-8'>
     <div className=" col-span-8 object-cover w-full transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm10.png'} className="block col-span-8 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className="self-start w-1/2 object-cover transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm11.png'} className="self-start w-1/2 block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     </div>
     <div className=" col-span-8 object-cover w-full h-256 transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm2.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className=" col-span-4 object-cover w-full h-128 transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm3.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className=" col-span-4 object-cover w-full h-256 transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm4.png'} className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className=" col-span-4 object-cover w-full h-256 transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/sm5.png'} className="block object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
-    <div style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-    <a className="inline-block text-white text-sm font-bold text-[20px]">VIEW MUSIC VIDEO ↗</a>
+    <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
     </div>
     <div className="inline-block text-center mt-24 text-[50px] text-white opacity-80 col-span-4">
@@ -236,7 +245,7 @@ function App() {
   </div>
 </section>
 {/*SECTION6 PC 끝 */}
-    <section  className="mobile block md:hidden w-full bg-black text-white font-bold px-4 py-12">
+    <section  className="mobile block md:hidden w-full bg-black text-white font-bold px-4 py-12 z-20">
   <div className="text-center mb-12">
     <div className="text-4xl inline-block mr-2 text-pink-300">SM</div>
     <div className="text-4xl inline-block">ARTISTS</div>
@@ -262,9 +271,8 @@ function App() {
               style={{ cursor: "url('/hovercursor_32x32.png') 0 0, auto" }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
-              <a className="text-white font-bold text-[10px]">
-                VIEW MUSIC VIDEO ↗
-              </a>
+    <a className="text-white iniline-block  font-bold text-[30px]">VIEW MUSIC VIDEO <img className='inline-block' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
+
             </div>
           </motion.div>
         ))}
@@ -272,14 +280,14 @@ function App() {
 </section>
     {/*SECTION6 끝 */}
 
-    <section className="inline-block w-full min-h-screen px-6 py-12 text-black font-bold">
+    <section className="inline-block w-full min-h-screen px-10 py-12 text-black font-bold">
           <div className='sec7txt text-[40px] sm:text-[50px]'>
             <div className='text-pink-400 inline-block '>SM</div>
-            ENTERTAINMENT <br/>CONNECTS FANS AND ARTIST            
+            ENTERTAINMENT CONNECTS<br/> FANS AND ARTIST            
               <img className='inline-block w-16' src={process.env.PUBLIC_URL + '/sec5_01.png'}/>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-2">
-              <div className="relative col-span-2 h-[400px] group hover: cursor-pointer">
+              <div className="relative col-span-2 h-[516px] group hover: cursor-pointer">
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_01.png'}/>
                 <div className="absolute bottom-6 left-6 text-white">
                   <div className='inline-block text-white  text-[30px] sm:text-[40px] group'>
@@ -297,11 +305,11 @@ function App() {
                 <div className='text-white '>SM TOWN에서 팔로우하는 아티스트의 최신 굿즈와 앨범 등 다양한 아이템들을 한번에 만나보세요.</div>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 ">
-              <div className='relative h-[195px] overflow-hidden group hover: cursor-pointer'>
+              <div className="flex flex-col gap-4 ">
+              <div className='relative h-[250px]  group hover: cursor-pointer'>
               <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_02bg.png'}/>
-                  <img className='sec7_01 absolute right-4 top-0 w-20 h-20' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
-                  <img className='sec7_02 absolute right-20 top-4 w-20 h-20' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
+                  <img className='sec7_01 absolute right-4 top-[-100px] w-[300px] h-[300px]' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
+                  <img className='sec7_02 absolute left-[200px] top-[0px] w-[100px] h-[100px]' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
                 <div className='absolute bottom-4 left-4 text-white'>
                   <div className='inline-block  group'>
                     <span className="inline-block relative text-[30px] sm:text-[40px]">KWANGYA 119
@@ -311,7 +319,7 @@ function App() {
                   <div className='text-sm'>아티스트의 활동을 위한 제보는 광야 119로 문의해주세요.</div>
                 </div>
               </div>
-              <div className='relative h-[195px] group hover: cursor-pointer'>
+              <div className='relative h-[250px] group hover: cursor-pointer'>
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_03.png'}/>
                   <div className='absolute bottom-4 left-4 text-white '>
                   <div className='inline-block  group'>
