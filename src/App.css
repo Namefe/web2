@@ -28,13 +28,7 @@ html, body, #root {
     right: 150px;
     font-size: 50px;
 }
-.the{
-    position: absolute;
-    top:250px;
-    left:150px;
-    font-weight: 700;
-    line-height: 1;
-}
+
 .scroll{
     position: absolute;
     top: 90%;
@@ -48,27 +42,29 @@ html, body, #root {
 
 .img1{
     position: absolute;
-    top:-10px;
+    top:150px;
     left:-200px;
     z-index: 10;
     scale:0.6
 }
 .img2{
     position: absolute;
+    top:10px;
+    left:-200px;
     z-index: 10;
     scale:0.6
 }
 .img3{
     position: absolute;
     scale: 0.6;
-    top:-15%;
-    left:25%
+    top:-10px;
+    left:300px;
 }
 .img4{
     position: absolute;
     scale:0.6;
-    top: -100%;
-    left: 30%;
+    top:150px;
+    left:-200px;
 }
 .img5{
     position: absolute;
@@ -79,8 +75,6 @@ html, body, #root {
     position: absolute;
     scale:0.6;
     right: 0;
-    bottom: -50%;
-    transform: translateX(100px);
 }
 .country{
     transform: translate(-50%,-50%);
@@ -91,9 +85,10 @@ html, body, #root {
 .sec5txt{
     text-align: center;
     position: absolute;
-    top:10%;
+    top:20%;
     left:50%;
     transform: translate(-50%,-50%);
+    width:400px
 }
 .sec5txt1{
     display: block;
@@ -143,8 +138,8 @@ html, body, #root {
 
 }
 .sec7txt{
-    font-size: 50px;
     text-align: left;
+    width:fit-content
 }
 .txt-image{
     height: 20px;
@@ -152,4 +147,49 @@ html, body, #root {
 
 .policy{
     margin-right: 90px;
+}
+
+@media (max-width:639px){
+    .scroll{
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .img1{
+        position: absolute;
+        top:200px;
+        left:-200px;
+        z-index: 10;
+        scale:0.5
+    }
+    .img2{
+        position: absolute;
+        top:150px;
+        left:-200px;
+        z-index: 10;
+        scale:0.6
+    }
+    .img3{
+        position: absolute;
+        scale: 0.4;
+        top:-5%;
+        left:0
+    }
+    .img4{
+        position: absolute;
+        top:-120px;
+        left:40%;
+    }
+    .img5{
+        position: absolute;
+        scale:0.45;
+        left:50%;
+        top:100px;
+    }
+    .img6{
+        top:300px;
+        left:40%;
+        scale:0.4;
+    }
 }

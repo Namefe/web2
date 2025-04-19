@@ -34,15 +34,15 @@ function App() {
   ];
 
   const Header = () => (
-    <header className="absolute top-0 left-0 w-full flex justify-between items-center p-4 sm:p-6 z-10">
+    <header className="absolute top-4 left-0 w-full flex justify-between items-center p-4 sm:p-6 z-10">
       <div className="flex items-center gap-2 relative">
-        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-8 sm:w-12"/>
+        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-12"/>
         <span className="text-xs sm:text-sm tracking-widest font-semibold ml-2">
           SM<br />ENTERTAINMENT
         </span>
       </div>
       <button className="text-white text-xl sm:text-2xl">
-        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-6 sm:w-8"/>
+        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8"/>
       </button>
     </header>
   );
@@ -54,30 +54,25 @@ function App() {
   
       <section>
         <div className='sec1_img w-full h-full relative'>
-          <div className='relative'>
-            <img className='img1' src={process.env.PUBLIC_URL + '/1.png'} />
-          </div>
-          <div className='relative'>
-            <img className='img2' src={process.env.PUBLIC_URL + '/2.png'} />
-          </div>
+          <img className='img1' src={process.env.PUBLIC_URL + '/1.png'} />
+          <img className='img2' src={process.env.PUBLIC_URL + '/2.png'} />
           <img className='img3' src={process.env.PUBLIC_URL + '/3.png'} />
           <img className='img4' src={process.env.PUBLIC_URL + '/4.png'} />
           <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
           <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
         </div>
-  
-        <div className="the absolute top-[120px] left-[20px] sm:top-[250px] sm:left-[150px]">
-          <div className="text-[32px] sm:text-[100px] block w-fit">THE CULTURE,</div>
-          <div className="text-[32px] sm:text-[100px] block w-fit">THE FUTURE</div>
+        <div className="the absolute top-[280px] left-[70px] sm:top-[250px] sm:left-[150px]">
+          <div className="text-[50px] sm:text-[100px] block w-fit">THE CULTURE,</div>
+          <div className="text-[50px] sm:text-[100px] block w-fit">THE FUTURE</div>
         </div>
   
         <div>
-          <div className="absolute bottom-4 left-4 text-xs sm:text-base font-medium">Introduction</div>
+          <div className="absolute bottom-4 left-4 text-xs sm:text-base font-medium hidden 2xl:block">Introduction</div>
           <div className="scroll">
             <img className="cursor-pointer pointer-events-auto w-8 sm:w-12" src={process.env.PUBLIC_URL + '/scroll.png'} />
           </div>
-          <div className="absolute bottom-[30px] right-4 sm:right-8 text-xs sm:text-base font-medium">
-            <span className="opacity-90 text-[20px] sm:text-[35px]">We invest in the future.</span>
+          <div className="absolute bottom-[350px] right-[90px] sm:right-8 text-xs sm:text-base font-medium">
+            <span className="opacity-90 text-[30px] sm:text-[35px]">We invest in the future.</span>
           </div>
         </div>
   
@@ -85,10 +80,10 @@ function App() {
           <img onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={process.env.PUBLIC_URL + '/top.png'} alt="top" className="w-full h-full"/>
         </div>
   
-        <div className="relative w-full h-screen sm:block hidden">
-          <div className="absolute top-0 bottom-0 left-[140px] w-px bg-white/20"></div>
-          <div className="absolute top-0 bottom-0 right-[140px] w-px bg-white/20"></div>
-         <div className="absolute left-0 right-0 bottom-[100px] h-px bg-white/20"></div>
+        <div className="relative w-full h-screen">
+          <div className="sm:block hidden absolute top-0 bottom-0 left-[140px] w-px bg-white/20"></div>
+          <div className="sm:block hidden absolute top-0 bottom-0 right-[140px] w-px bg-white/20"></div>
+         <div className="absolute left-0 right-0 bottom-[90px] h-px bg-white/20"></div>
         </div>
         </section>
     </div>
@@ -96,7 +91,7 @@ function App() {
   
     {/*---------------------------------------------------------------------- section1 끝--------------------------------*/}
 
-    <section  className="w-screen h-screen bg-black overflow-hidden relative text-white font-bold flex items-center justify-center">
+    <section  className="w-full h-screen bg-black overflow-hidden relative text-white font-bold flex items-center justify-center">
           <p className="h-full flex items-center justify-center" style={{fontSize:'35px'}}>아시아를 넘어<br/> 글로벌 No.1을 지향합니다.</p>
           <img className='country absolute top-[50%] left-[50%]' src={process.env.PUBLIC_URL + '/sec2_01.png'}/>
       </section>
@@ -133,11 +128,11 @@ function App() {
 </div>
     {/*------------------------------------------------------------- section4 끝 --------------------------------------------*/}
 
-    <section className="sec4bg w-auto text-white font-bold bg-contain" style={{backgroundImage:`url(${process.env.PUBLIC_URL}/sec4_bg.png)`}}>
+    <section className="sec4bg w-auto text-white  bg-contain" style={{backgroundImage:`url(${process.env.PUBLIC_URL}/sec4_bg.png)`}}>
         <div className='relative'>
           <div className='sec5txt '>
-            <div className='sec5txt1 lg:text-2xl xl:text-[20px]'>SM Entertainment는</div>
-            <div className='sec5txt2 lg:text-2xl xl:text-[40px]'>K-Culture의 미래를 설계합니다.</div>
+            <div className='sec5txt1 text-[20px] lg:text-2xl xl:text-[20px]'>SM Entertainment는</div>
+            <div className='sec5txt2 text-[25px] font-bold lg:text-2xl xl:text-[40px]'>K-Culture의 미래를 설계합니다.</div>
             </div>
             <div className='sec5'>
             <img className='sec5img1 w-1/3 h-auto object-contain'data-aos="fade-up" src={process.env.PUBLIC_URL + '/sec4_01.png'}></img>
@@ -256,7 +251,7 @@ function App() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInVariants}
-            className="relative group overflow-hidden aspect-[4/3]"
+            className="relative group overflow-hidden aspect-[5/3]"
           >
             <img
               src={`${process.env.PUBLIC_URL}/${img}`}
@@ -277,26 +272,24 @@ function App() {
 </section>
     {/*SECTION6 끝 */}
 
-    <section className=" w-full min-h-screen px-6 py-12 text-black font-bold">
-          <div className='sec7txt'>
-            <div className='text-pink-400 inline-block'>SM</div>
-            <div className='inline-block'>ENTERTAINMENT CONNECTS</div>
-            <div className=''>FANS AND ARTIST            
-              <img className='inline' src={process.env.PUBLIC_URL + '/sec5_01.png'}/>
-            </div>
+    <section className="inline-block w-full min-h-screen px-6 py-12 text-black font-bold">
+          <div className='sec7txt text-[40px] sm:text-[50px]'>
+            <div className='text-pink-400 inline-block '>SM</div>
+            ENTERTAINMENT <br/>CONNECTS FANS AND ARTIST            
+              <img className='inline-block w-16' src={process.env.PUBLIC_URL + '/sec5_01.png'}/>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-2">
               <div className="relative col-span-2 h-[400px] group hover: cursor-pointer">
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_01.png'}/>
                 <div className="absolute bottom-6 left-6 text-white">
-                  <div className='inline-block text-white  text-[40px] group'>
+                  <div className='inline-block text-white  text-[30px] sm:text-[40px] group'>
                     <span className="inline-block relative">SMTOWN
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </div>
                   <img className='inline-block ml-2' src={process.env.PUBLIC_URL + '/화살표.png'}/>
                 
-                <div className=' block text-white text-[40px] group'>
+                <div className=' block text-white text-[30px] sm:text-[40px] group'>
                   <span className="inline-block relative">GOODS&ITEMS 
                   <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </span>
@@ -310,8 +303,8 @@ function App() {
                   <img className='sec7_01 absolute right-4 top-0 w-20 h-20' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
                   <img className='sec7_02 absolute right-20 top-4 w-20 h-20' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
                 <div className='absolute bottom-4 left-4 text-white'>
-                  <div className='inline-block text-[30px] group'>
-                    <span className="inline-block relative">KWANGYA 119
+                  <div className='inline-block  group'>
+                    <span className="inline-block relative text-[30px] sm:text-[40px]">KWANGYA 119
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                     </span></div>
                   <img className='inline-block' src={process.env.PUBLIC_URL + '/화살표.png'}/>
@@ -321,8 +314,8 @@ function App() {
               <div className='relative h-[195px] group hover: cursor-pointer'>
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_03.png'}/>
                   <div className='absolute bottom-4 left-4 text-white '>
-                  <div className='inline-block text-[30px] group'>
-                    <span className="inline-block relative">SMTOWN 30
+                  <div className='inline-block  group'>
+                    <span className="inline-block relative text-[30px] sm:text-[40px]">SMTOWN 30
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                     </span></div>
                     <img className='inline-block' src={process.env.PUBLIC_URL + '/화살표.png'}/>
