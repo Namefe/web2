@@ -11,25 +11,22 @@ export default function ScrollReveal() {
     offset: ['start start', 'end end'],
   })
 
-  // 첫 번째 div에서 두 번째 div로의 변환 (원형 확대)
   const clipPathFirstToSecond = useTransform(
     scrollYProgress,
     [0, 0.4],
     ['circle(0% at 50% 50%)', 'circle(250% at 50% 50%)']
   )
 
-  // 두 번째 div에서 세 번째 div로의 변환 (직사각형 변환)
   const clipPathSecondToThird = useTransform(
     scrollYProgress,
     [0.4, 0.6],
     ['circle(250% at 50% 50%)', 'rect(0% 100% 100% 0%)']
   )
 
-  // 세 번째 div의 opacity 애니메이션 (스크롤에 따라 점차적으로 나타나게)
   const opacityThirdDiv = useTransform(
     scrollYProgress,
     [0.4, 0.6],
-    [0, 1] // 0에서 1로 opacity가 변화
+    [0, 1]
   )
 
   return (
@@ -50,7 +47,7 @@ export default function ScrollReveal() {
           />
         </motion.div>
 
-        {/*<motion.div
+        <motion.div
           className="absolute top-0 left-0 w-full h-full z-20 overflow-hidden"
           style={{ clipPath: clipPathSecondToThird }}
         >
@@ -81,7 +78,7 @@ export default function ScrollReveal() {
               </div>
             </div>
           </div>
-        </motion.div>*/}
+        </motion.div>
 
 
 

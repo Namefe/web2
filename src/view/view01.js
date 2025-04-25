@@ -11,7 +11,7 @@ const View01 = () => {
       </div>
       <div className='img2 '>
       <img className='relative z-10' src={process.env.PUBLIC_URL + '/2.png'} />
-      <div className=' backdrop-blur-md w-[550px] h-[115px] inline-block absolute top-[165px] left-[165px] rotate-[23deg]'
+      <div className=' backdrop-blur-md w-[400px] h-[120px] sm:w-[550px] sm:h-[170px] inline-block absolute top-[135px] left-[165px] rotate-[23deg]'
       style={{ borderRadius: '100px' }}></div>
       </div>
       <img className='img3' src={process.env.PUBLIC_URL + '/3.png'} />
@@ -19,7 +19,7 @@ const View01 = () => {
       <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
       <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
     </div>
-    <div className=" absolute top-[280px] left-[70px] sm:top-[200px] sm:left-[150px]">
+    <div className=" absolute top-[280px] left-[70px] sm:top-[400px] sm:left-[150px]">
       <div className="text-[50px] sm:text-[150px]">THE CULTURE,</div>
       <div className="text-[50px] sm:text-[150px]">THE FUTURE</div>
     </div>
