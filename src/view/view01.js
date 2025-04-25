@@ -3,7 +3,7 @@ import React from 'react'
 const View01 = () => {
   return (
     <section className='relative w-full h-screen bg-black text-white overflow-hidden'>
-    <div className='sec1_img w-full h-full relative  z-10'>
+    <div className='sec1_img w-full h-screen relative  z-10'>
       <div className='img1'>
       <img className='inline-block relative z-50'  src={process.env.PUBLIC_URL + '/1.png'} />
       <div className='backdrop-blur-md w-[160px] h-[750px] inline-block absolute top-[-45px] right-[230px]  rotate-[319deg]'
@@ -19,9 +19,9 @@ const View01 = () => {
       <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
       <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
     </div>
-    <div className="the absolute top-[280px] left-[70px] sm:top-[400px] sm:left-[150px]">
-      <div className="text-[50px] sm:text-[150px] m-0 block w-fit">THE CULTURE,</div>
-      <div className="text-[50px] sm:text-[150px] m-0 block w-fit">THE FUTURE</div>
+    <div className=" absolute top-[280px] left-[70px] sm:top-[200px] sm:left-[150px]">
+      <div className="text-[50px] sm:text-[150px]">THE CULTURE,</div>
+      <div className="text-[50px] sm:text-[150px]">THE FUTURE</div>
     </div>
 
     <div>

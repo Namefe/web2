@@ -1,9 +1,10 @@
 
 html, body, #root {
-    height: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
+  
 .txt{
     text-align: center;
 }
@@ -74,9 +75,6 @@ html, body, #root {
     position: absolute;
     top:600px;
     right:-200px;
-}
-.country{
-    transform: translate(-50%,-50%);
 }
 
 .sec5txt{
@@ -179,6 +177,18 @@ html, body, #root {
     }
     .sec5txt{
         width:400px;
+    }
+    .sec7_01{
+        scale:0.5;
+        position: absolute;
+        right:-10%;
+        top:-10%
+    }
+    .sec7_02{
+        scale:0.5;
+        position: absolute;
+        top:10%;
+        left:30%
     }
 
 }

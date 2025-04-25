@@ -3,7 +3,7 @@ import React from 'react'
 const View04 = () => {
   return (
     <>
-     <section className="relative sec4bg w-auto text-white  bg-contain">
+     <section className="relative sec4bg w-full text-white  bg-cover bg-center">
     <video
     autoPlay
     muted
@@ -14,7 +14,7 @@ const View04 = () => {
   </video>
 
         <div className='relative h-[500vh]'>
-          <div className='sec5txt flex flex-col  justify-center items-center h-[100vh]'>
+          <div className='sec5txt flex flex-col justify-center items-center w-full h-[100vh]'>
             <div className='text-[20px] lg:text-2xl xl:text-[30px] xl:m-4'>SM Entertainment는</div>
             <div className='text-[25px] font-bold lg:text-2xl xl:text-[60px]'>K-Culture의 미래를 설계합니다.</div>
             </div>
