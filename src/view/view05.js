@@ -100,6 +100,15 @@ const View05 = () => {
   </div>
 </section>
 {/*SECTION6 PC 끝 */}
+
+{/* <section className='overflow-hidden'>
+    <div className='flex'>1섹션 : 이미지 3개씩</div>
+    <div>2섹션</div>
+    <div>3섹션</div>
+
+</section> */}
+
+
 <section className="block md:hidden w-full bg-black text-white font-bold px-2 py-8">
   <div className="text-center mb-8">
     <div className="text-3xl inline-block mr-2 text-pink-300">SM</div>
