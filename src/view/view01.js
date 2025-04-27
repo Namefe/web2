@@ -19,9 +19,9 @@ const View01 = () => {
       <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
       <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
     </div>
-    <div className=" text-center absolute top-[350px] left-[80px] font-bold text-white  sm:top-[400px] sm:left-[150px]">
-      <div className="text-[44px] sm:text-[152px] font-sans">THE <span className='font-serif'>CUL</span>TURE,</div>
-      <div className="text-[44px] sm:text-[152px] font-sans">THE <span className='font-serif'>FU</span>TURE</div>
+    <div className=" text-center absolute top-[300px] left-[80px] font-bold text-white sm:left-[130px]  lg:top-[400px] lg:left-[150px]">
+      <div className="text-[44px] sm:text-[60px] lg:text-[100px] xl:text-[152px] font-sans">THE <span className='font-serif'>CUL</span>TURE,</div>
+      <div className="text-[44px] sm:text-[60px] lg:text-[100px] xl:text-[152px] font-sans">THE <span className='font-serif'>FU</span>TURE</div>
     </div>
 
     <div>
@@ -29,18 +29,18 @@ const View01 = () => {
       <div className="scroll hover:cursor-pointer">
         <img className="cursor-pointer pointer-events-auto w-8 sm:w-12 " src={process.env.PUBLIC_URL + '/scroll.png'} />
       </div>
-      <div className="absolute text-white bottom-[420px] right-[150px] sm:bottom-[30px] sm:right-[50px] text-xs sm:text-base font-medium z-30">
-        <span className="opacity-90 text-[20px] sm:text-[50px]">We invest in the future.</span>
+      <div className="absolute text-white bottom-[250px] right-[150px] sm:bottom-[180px] sm:right-[180px] lg:bottom-[30px] lg:right-[50px] text-xs sm:text-base font-medium z-30">
+        <span className="opacity-90 text-[20px] sm:text-[30px] xl:text-[50px]">We invest in the future.</span>
       </div>
     </div>
 
-    <div className="fixed bottom-4 right-4  border border-white/50 rounded-full hover:cursor-pointer w-[40px] h-[40px] sm:w-[72px] sm:h-[72px]  z-10" style={{ backdropFilter: 'blur(3.86px)' }}>
+    <div className="fixed bottom-4 right-4  border border-white/50 rounded-full hover:cursor-pointer w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[72px] lg:h-[72px]  z-10" style={{ backdropFilter: 'blur(3.86px)' }}>
       <img onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={process.env.PUBLIC_URL + '/top.png'} alt="top" className="w-full h-full scale-75 relative top-[-4px]"/>
     </div>
 
     <div>
-      <div className="sm:block hidden absolute top-0 bottom-0 left-[140px] w-px line1" ></div>
-      <div className="sm:block hidden absolute top-0 bottom-0 right-[140px] w-px line1" ></div>
+      <div className="lg:block hidden absolute top-0 bottom-0 left-[140px] w-px line1" ></div>
+      <div className="lg:block hidden absolute top-0 bottom-0 right-[140px] w-px line1" ></div>
      <div className="absolute left-0 right-0 bottom-[90px] h-px line2"></div>
     </div>
     </section>
