@@ -19,17 +19,17 @@ const View01 = () => {
       <img className='img5' src={process.env.PUBLIC_URL + '/5.png'} />
       <img className='img6' src={process.env.PUBLIC_URL + '/6.png'} />
     </div>
-    <div className=" text-center absolute top-[300px] left-[80px] font-bold text-white sm:left-[130px]  lg:top-[400px] lg:left-[150px]">
+    <div className=" text-center absolute top-[300px] left-[80px] font-bold text-white sm:left-[130px]  lg:top-[300px] lg:left-[150px]">
       <div className="text-[44px] sm:text-[60px] lg:text-[100px] xl:text-[152px] font-sans">THE <span className='font-serif'>CUL</span>TURE,</div>
       <div className="text-[44px] sm:text-[60px] lg:text-[100px] xl:text-[152px] font-sans">THE <span className='font-serif'>FU</span>TURE</div>
     </div>
 
     <div>
-      <div className="absolute bottom-4 left-4 text-xs sm:text-[12px] text-white hidden 2xl:block">Introduction</div>
+      <div className="absolute bottom-[150px] left-4 text-xs sm:text-[12px] text-white hidden 2xl:block">Introduction</div>
       <div className="scroll hover:cursor-pointer">
         <img className="cursor-pointer pointer-events-auto w-8 sm:w-12 " src={process.env.PUBLIC_URL + '/scroll.png'} />
       </div>
-      <div className="absolute text-white bottom-[250px] right-[150px] sm:bottom-[180px] sm:right-[180px] lg:bottom-[30px] lg:right-[50px] text-xs sm:text-base font-medium z-30">
+      <div className="absolute text-white bottom-[250px] right-[150px] sm:bottom-[180px] sm:right-[180px] lg:bottom-[130px] lg:right-[50px] text-xs sm:text-base font-medium z-30">
         <span className="opacity-90 text-[20px] sm:text-[30px] xl:text-[50px]">We invest in the future.</span>
       </div>
     </div>
@@ -41,7 +41,7 @@ const View01 = () => {
     <div>
       <div className="lg:block hidden absolute top-0 bottom-0 left-[140px] w-px line1" ></div>
       <div className="lg:block hidden absolute top-0 bottom-0 right-[140px] w-px line1" ></div>
-     <div className="absolute left-0 right-0 bottom-[90px] h-px line2"></div>
+     <div className="absolute left-0 right-0 bottom-[200px] h-px line2"></div>
     </div>
     </section>
   )
