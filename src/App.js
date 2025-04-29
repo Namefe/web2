@@ -1,12 +1,10 @@
 
 import './App.css';
-import View01 from './view/view01';
-import View02 from './view/view02';
-import View04 from './view/view04';
-import View05 from './view/view05';
-import View06 from './view/view06';
-import Footer from './view/footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import HomePage from './view/HomePage';
+import Artist from './view/Artist';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,29 +28,59 @@ function App() {
   );
 
   const Menu = () => (
-    <div className="fixed top-0 left-0 w-full h-full bg-gray-500 text-black p-8 z-40 transition-all duration-300">
-      <ul className="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
-        <li className="hover:bg-gray-100 p-6 w-full text-center">HOME</li>
-        <li className="hover:bg-gray-100 p-6 w-full text-center">INTRODUCTION</li>
-        <li className="hover:bg-gray-100 p-6 w-full text-center">SERVICES</li>
-        <li className="hover:bg-gray-100 p-6 w-full text-center">AAAA</li>
-      </ul>
+<div className="fixed top-0 left-0 w-full h-full bg-black text-white z-50 transition-all duration-300 cursor-pointer">
+<div className="absolute top-8 right-8">
+      <button onClick={toggleMenu}>
+        <img src={process.env.PUBLIC_URL + '/close.png'} className="w-8" alt="닫기버튼" />
+      </button>
     </div>
+<ul className="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
+<li className="p-6 w-full text-center group">
+  <Link
+    to="/"
+    onClick={() => setIsMenuOpen(false)}
+    className="relative inline-block"
+  >
+    ABOUT
+    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+</li>
+  <li className="p-6 w-full text-center group">
+        <Link
+        onClick={() => setIsMenuOpen(false)}
+         to="/artists" 
+         className="relative inline-block">
+          ARTISTS
+          <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </Link>
+      </li>
+  <li className="p-6 w-full text-center group">
+    <span className="relative inline-block">
+      BUISNESS
+      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+    </span>
+  </li>
+  <li className="p-6 w-full text-center group">
+    <span className="relative inline-block">
+      CONTACT
+      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+    </span>
+  </li>
+</ul>
+</div>
   );
 
   return (
+    <Router>
     <div className="relative min-h-screen">
       <Header />
-      {isMenuOpen && <Menu />}
-      <div> 
-        <View01 />
-        <View02 />
-        <View04 />
-        <View05 />
-        <View06 />
-        <Footer />
-      </div>
+      {isMenuOpen && Menu()}
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/artists" element={<Artist />} />
+      </Routes>
     </div>
+    </Router>
   );
 }
 
