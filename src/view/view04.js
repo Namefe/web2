@@ -2,7 +2,7 @@ import React from 'react'
 
 const View04 = () => {
   return (
-    <>
+    
      <section className="relative sec4bg w-full text-white  bg-cover bg-center">
     <video
     autoPlay
@@ -29,7 +29,7 @@ const View04 = () => {
             </div>
             </div>
       </section>
-    </>
+    
   )
 }
 

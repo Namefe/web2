@@ -4,6 +4,7 @@ html, body, #root {
     padding: 0;
     box-sizing: border-box;
   }
+
   .line1{
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 1) 20% );
   }

@@ -1,10 +1,11 @@
-
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import HomePage from './view/HomePage';
 import Artist from './view/Artist';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Footer from './view/footer';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,73 +14,84 @@ function App() {
     setIsMenuOpen(prev => !prev);
   };
 
-  const Header = () => (
-    <header className="relative text-white top-0 left-0 w-full flex justify-between items-center p-4 sm:p-6 z-50 bg-black">
-      <div className="flex items-center gap-2 relative">
-        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4" alt="로고" />
-        <span className="text-xs sm:text-sm tracking-widest font-semibold ml-12">
-          SM<br />ENTERTAINMENT
-        </span>
-      </div>
-      <button onClick={toggleMenu} className="text-white text-xl sm:text-2xl hover:cursor-pointer">
-        <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4" alt="메뉴버튼" />
-      </button>
-    </header>
-  );
+  const Header = () => {
+    const location = useLocation();
+  
+    return (
+      <header className="relative text-white top-0 left-0 w-full flex justify-between items-center p-4  z-50 bg-black">
+        <div className="flex items-center gap-2">
+          <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4" alt="로고" />
+          {location.pathname === '/artists' ? (
+            <div className="ml-4 leading-tight">
+              <h1 className="text-[50px] sm:text-lg font-bold">aespa</h1>
+              <div className="text-[10px] sm:text-xs">æ-nergy Unleashed aespa coming soon</div>
+            </div>
+          ) : (
+            <span className="text-xs sm:text-sm tracking-widest font-semibold ml-12">
+              SM<br />ENTERTAINMENT
+            </span>
+          )}
+        </div>
+        <button onClick={toggleMenu} className="text-white text-xl sm:text-2xl hover:cursor-pointer">
+          <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4" alt="메뉴버튼" />
+        </button>
+      </header>
+    );
+  };
 
   const Menu = () => (
-<div className="fixed top-0 left-0 w-full h-full bg-black text-white z-50 transition-all duration-300 cursor-pointer">
-<div className="absolute top-8 right-8">
-      <button onClick={toggleMenu}>
-        <img src={process.env.PUBLIC_URL + '/close.png'} className="w-8" alt="닫기버튼" />
-      </button>
+    <div className="fixed top-0 left-0 w-full h-full bg-black text-white z-50 transition-all duration-300 cursor-pointer">
+      <div className="absolute top-8 right-8">
+        <button onClick={toggleMenu}>
+          <img src={process.env.PUBLIC_URL + '/close.png'} className="w-8" alt="닫기버튼" />
+        </button>
+      </div>
+      <ul className="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
+        <li className="p-6 w-full text-center group">
+          <Link
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="relative inline-block"
+          >
+            ABOUT
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        </li>
+        <li className="p-6 w-full text-center group">
+          <Link
+            onClick={() => setIsMenuOpen(false)}
+            to="/artists"
+            className="relative inline-block"
+          >
+            ARTISTS
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        </li>
+        <li className="p-6 w-full text-center group">
+          <span className="relative inline-block">
+            BUISNESS
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </li>
+        <li className="p-6 w-full text-center group">
+          <span className="relative inline-block">
+            CONTACT
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </li>
+      </ul>
     </div>
-<ul className="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
-<li className="p-6 w-full text-center group">
-  <Link
-    to="/"
-    onClick={() => setIsMenuOpen(false)}
-    className="relative inline-block"
-  >
-    ABOUT
-    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-  </Link>
-</li>
-  <li className="p-6 w-full text-center group">
-        <Link
-        onClick={() => setIsMenuOpen(false)}
-         to="/artists" 
-         className="relative inline-block">
-          ARTISTS
-          <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-        </Link>
-      </li>
-  <li className="p-6 w-full text-center group">
-    <span className="relative inline-block">
-      BUISNESS
-      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-    </span>
-  </li>
-  <li className="p-6 w-full text-center group">
-    <span className="relative inline-block">
-      CONTACT
-      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-    </span>
-  </li>
-</ul>
-</div>
   );
 
   return (
     <Router>
-    <div className="relative min-h-screen">
       <Header />
-      {isMenuOpen && Menu()}
+      {isMenuOpen && <Menu />}
       <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/artists" element={<Artist />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/artists" element={<Artist />} />
       </Routes>
-    </div>
+      <Footer/>
     </Router>
   );
 }

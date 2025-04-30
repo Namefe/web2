@@ -6,7 +6,7 @@ const View05 = () => {
 
   return (
     <>
-        <section  className="pc hidden md:block w-full bg-black text-white  px-0 py-12 z-20">
+    <section  className="pc hidden md:block w-full bg-black text-white  px-0 py-12 z-20">
   <div className="text-center font-bold mb-12 py-10">
     <div className="sm:text-[60px] inline-block mr-2 text-pink-300">SM</div>
     <div className="sm:text-[60px] inline-block ">ARTISTS</div>
@@ -60,7 +60,7 @@ const View05 = () => {
     </div>
     </div>
     <div className="self-start w-1/2 object-cover transition duration-300 group-hover:brightness-50 relative group overflow-hidden">
-    <img src={process.env.PUBLIC_URL + '/sm11.png'} className="self-start w-1/2 block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
+    <img src={process.env.PUBLIC_URL + '/sm11.png'} className="self-start  block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105" />
     <div style={{ cursor: "url('/hover.png') 0 0, auto" }} className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
     <a className="text-white iniline-block   text-[30px]">VIEW MUSIC VIDEO <img className='inline-block mb-3' src={`${process.env.PUBLIC_URL}/hoverimg.png`}/></a>
     </div>
