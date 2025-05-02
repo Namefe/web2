@@ -10,7 +10,7 @@ const View06 = () => {
               <img className='inline-block relative left-[4px] top-[-4px]' src={process.env.PUBLIC_URL + '/sec5_01.png'}/>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              <div className="relative col-span-2  group hover: cursor-pointer">
+              <div className="relative col-span-2 aspect-[3/2]  group hover: cursor-pointer">
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_01.png'}/>
                 <div className="absolute bottom-6 left-6 text-white">
                   <div className='inline-block text-white  text-[20px] sm:text-[36px] group'>
@@ -28,7 +28,7 @@ const View06 = () => {
                 <div className='text-white text-[14px] sm:text-[16px] '>SM TOWN에서 팔로우하는 아티스트의 최신 굿즈와 앨범 등 다양한 아이템들을 한번에 만나보세요.</div>
                 </div>
               </div>
-              <div className="flex flex-col gap-4 justify-center ">
+              <div className="grid grid-rows-2 gap-4 justify-center ">
               <div className='relative  group hover: cursor-pointer'>
               <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_02bg.png'}/>
                   <img className='sec7_01 absolute right-4 top-[-100px] w-[300px] h-[300px]' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
@@ -42,7 +42,7 @@ const View06 = () => {
                   <div className='text-[14px] sm:text-[16px]'>아티스트의 활동을 위한 제보는 광야 119로 문의해주세요.</div>
                 </div>
               </div>
-              <div className='relative   group hover: cursor-pointer'>
+              <div className='relative  group hover: cursor-pointer'>
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_03.png'}/>
                   <div className='absolute bottom-4 left-4 text-white '>
                   <div className='inline-block  group'>

@@ -21,16 +21,9 @@ function App() {
       <header className="relative text-white top-0 left-0 w-full flex justify-between items-center p-4  z-50 bg-black">
         <div className="flex items-center gap-2">
           <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4" alt="로고" />
-          {location.pathname === '/artists' ? (
-            <div className="ml-4 leading-tight">
-              <h1 className="text-[50px] sm:text-lg font-bold">aespa</h1>
-              <div className="text-[10px] sm:text-xs">æ-nergy Unleashed aespa coming soon</div>
-            </div>
-          ) : (
             <span className="text-xs sm:text-sm tracking-widest font-semibold ml-12">
               SM<br />ENTERTAINMENT
             </span>
-          )}
         </div>
         <button onClick={toggleMenu} className="text-white text-xl sm:text-2xl hover:cursor-pointer">
           <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4" alt="메뉴버튼" />
@@ -85,14 +78,21 @@ function App() {
 
   return (
     <Router>
-      <Header />
-      {isMenuOpen && <Menu />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/artists" element={<Artist />} />
-      </Routes>
-      <Footer/>
-    </Router>
+    {isMenuOpen && <Menu />}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Header />
+            <HomePage />
+          </>
+        }
+      />
+      <Route path="/artists" element={<Artist />} />
+    </Routes>
+    <Footer />
+  </Router>
   );
 }
 
