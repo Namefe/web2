@@ -26,7 +26,7 @@ function App() {
             </span>
         </div>
         <button onClick={toggleMenu} className="text-white text-xl sm:text-2xl hover:cursor-pointer">
-          <img src={process.env.PUBLIC_URL + '/bar.png'} className="w-10 sm:w-8 sm:mr-4" alt="메뉴버튼" />
+          <img src={process.env.PUBLIC_URL + '/bar.svg'} className="w-10 sm:w-8 sm:mr-4" alt="메뉴버튼" />
         </button>
       </header>
     );

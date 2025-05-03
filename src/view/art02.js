@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const accordionData = [
   {
@@ -105,6 +105,7 @@ const accordionData = [
 
 const Art02 = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const contentRefs = useRef([]);
 
   const toggleIndex = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -113,14 +114,14 @@ const Art02 = () => {
   return (
     <div className="w-full h-full bg-black text-white">
       {accordionData.map((item, index) => (
-        <div key={index} className="border-t border-b border-white">
+        <div key={index} className="border-t border-b border-white overflow-hidden">
           <button
             onClick={() => toggleIndex(index)}
             className="w-full flex justify-between items-center p-4 text-left hover:bg-gray-800 transition"
           >
             <div className="relative w-full h-full">
-              <div className="text-[20px] lg:font-bold mt-4 mb-4">{item.title}</div>
-              <div className="absolute inset-0 flex items-center justify-center text-[20px] text-center w-full lg:block hidden">{item.subtitle}</div>
+              <div className="text-[20px] lg:font-bold m-4">{item.title}</div>
+              <div className="absolute inset-4 flex items-center justify-center text-[20px] text-center w-full lg:block hidden">{item.subtitle}</div>
             </div>
             <div className='mr-4'>
               {openIndex === index ? (
@@ -130,16 +131,28 @@ const Art02 = () => {
               )}
             </div>
           </button>
-          {openIndex === index && (
+
+          <div
+            ref={(el) => (contentRefs.current[index] = el)}
+            className="transition-all duration-500 ease-in-out overflow-hidden"
+            style={{
+              maxHeight: openIndex === index
+                ? `${contentRefs.current[index]?.scrollHeight}px`
+                : '0px',
+              opacity: openIndex === index ? 1 : 0,
+            }}
+          >
             <div className="p-4 bg-black text-sm leading-relaxed">
               <div className="mt-4 mb-6">
                 <img src={item.image} alt={`${item.title} Image`} className="w-full h-auto" />
               </div>
               <div>{item.content}</div>
             </div>
-          )}
+          </div>
         </div>
       ))}
+    </div>
+      )}
 <div class="flex justify-center mt-6 space-x-4 sm:flex hidden">
   <div class="relative pb-1">
     <button class="px-4 py-2 text-white font-semibold">
@@ -160,8 +173,5 @@ const Art02 = () => {
     </button>
   </div>
 </div>
-    </div>
-  );
-};
 
 export default Art02;

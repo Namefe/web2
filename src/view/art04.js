@@ -37,6 +37,9 @@ export default function SlideGallery() {
       </div>
 
       <div className="relative max-w-7xl mx-auto overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-10">
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,1)_0%,transparent_50%,transparent_50%,rgba(0,0,0,1)_100%)]" />
+  </div>
         <button
           onClick={prevSlide}
           className="absolute left-[150px] lg:left-2 top-1/2 -translate-y-1/2 z-10"
@@ -49,12 +52,13 @@ export default function SlideGallery() {
             const isCenter = idx === 1; 
 
             return (
+           
               <div
                 key={idx}
-                className={`transition-all duration-500 ${
+                className={`relative transition-all duration-500 ${
                   isCenter
-                    ? "scale-105 brightness-100" 
-                    : "scale-90 brightness-50 opacity-80" 
+                    ? "scale-105 " 
+                    : "scale-90 " 
                 }`}
               >
                 <img
@@ -63,9 +67,11 @@ export default function SlideGallery() {
                   className="w-[300px] h-auto object-cover transition-all duration-500"
                 />
               </div>
+            
             );
           })}
         </div>
+      
 
         <button
           onClick={nextSlide}
