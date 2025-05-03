@@ -18,7 +18,7 @@ function App() {
     const location = useLocation();
   
     return (
-      <header className="relative text-white top-0 left-0 w-full flex justify-between items-center p-4  z-50 bg-black">
+      <header className="fixed text-white top-0 left-0 w-full flex justify-between items-center p-4  z-50 ">
         <div className="flex items-center gap-2">
           <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4" alt="로고" />
             <span className="text-xs sm:text-sm tracking-widest font-semibold ml-12">
