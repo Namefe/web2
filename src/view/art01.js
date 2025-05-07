@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Art01 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const videoRef = useRef(null); // video 요소를 참조하기 위한 ref
+  const videoRef = useRef(null); 
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
   const handlePlayClick = () => {
-    setIsVideoPlaying(true); // video 렌더링 트리거
+    setIsVideoPlaying(true); 
     setTimeout(() => {
       if (videoRef.current) {
         videoRef.current.play();
       }
-    }, 0); // 렌더링 후 play
+    }, 0); 
   };
 
   return (

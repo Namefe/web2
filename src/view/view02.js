@@ -4,85 +4,91 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function ScrollReveal() {
-  const containerRef = useRef(null)
+  const sectionRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
+    target: sectionRef,
+    offset: ['start start', 'end start'],
   })
 
-  const clipPathFirstToSecond = useTransform(
-    scrollYProgress,
-    [0, 0.4],
-    ['circle(0% at 50% 50%)', 'circle(250% at 50% 50%)']
-  )
+  // --- Step 1: 배경 이미지 퍼짐 ---
+  const clipPathBg = useTransform(scrollYProgress, [0, 0.3], [
+    'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)',
+    'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+  ])
+  const scaleBg = useTransform(scrollYProgress, [0, 0.3], [0.5, 1])
+  const translateYBg = useTransform(scrollYProgress, [0, 0.3], ['-20%', '0%'])
 
-  const clipPathSecondToThird = useTransform(
-    scrollYProgress,
-    [0.4, 0.6],
-    ['circle(250% at 50% 50%)', 'rect(0% 100% 100% 0%)']
-  )
+  // --- Step 2: 흰색 배경 콘텐츠 확장 ---
+  const clipPathContent = useTransform(scrollYProgress, [0.25, 0.35], [
+    'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)',
+    'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+  ])
+  const opacityContent = useTransform(scrollYProgress, [0.25, 0.35], [0, 1])
 
-  const opacityThirdDiv = useTransform(
-    scrollYProgress,
-    [0.4, 0.6],
-    [0, 1]
-  )
+  // --- Step 3: 내부 이미지 translate + fade-in ---
+  const translateX = useTransform(scrollYProgress, [0.35, 0.45], [-100, 0])
+  const innerOpacity = useTransform(scrollYProgress, [0.35, 0.45], [0, 1])
 
   return (
-    <section ref={containerRef} className="relative h-[500vh] bg-black">
-      <div className="sticky top-0 h-screen flex items-center justify-center z-10">
-        <h1 className="text-white text-5xl font-bold text-center z-30">
-          아시아를 넘어 글로벌 No.1을 지향합니다.
-        </h1>
+<section ref={sectionRef} className="relative h-[400vh] bg-black">
+  {/* 고정된 h1 */}
+  <div className="sticky top-1/2 -translate-y-1/2 z-30 text-white text-5xl font-bold text-center">
+    아시아를 넘어 글로벌 No.1을 지향합니다.
+  </div>
 
-        <motion.div
-          className="absolute top-0 left-0 w-[100%] h-full z-30 overflow-hidden"
-          style={{ clipPath: clipPathFirstToSecond }}
-        >
-          <img
-            src="/bg.png"
-            className="w-full  h-full object-cover absolute"
-            alt="background"
+  {/* 배경 이미지 애니메이션 */}
+  <motion.div
+    className="sticky top-0 w-full h-screen z-[50]"
+    style={{
+      clipPath: clipPathBg,
+      scale: scaleBg,
+      translateY: translateYBg,
+    }}
+  >
+    <img
+      src="/bg.png"
+      alt="배경"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+
+      {/* STEP 3: 텍스트 + 이미지 콘텐츠 */}
+      <motion.div
+        className="main-slogan-3 absolute top-0 w-full h-screen z-[60] bg-white p-10 text-black font-semibold flex flex-col justify-center"
+        style={{ clipPath: clipPathContent, opacity: opacityContent }}
+      >
+        <div className="text-[64px] flex items-center">
+          SM Entertainment는 1995년 설립 이후&nbsp;
+          <motion.img
+            src="/sec3_01.png"
+            className="w-[173px] h-[58px] mx-2"
+            style={{ x: translateX, opacity: innerOpacity }}
           />
-        </motion.div>
+        </div>
+        <div className="text-[64px]">
+          K-POP을 선도하며 글로벌 시장을 개척해왔습니다.
+        </div>
 
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full z-20 overflow-hidden"
-          style={{ clipPath: clipPathSecondToThird }}
-        >
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-            <div className="text-black text-[40px] font-bold leading-relaxed bg-white p-10  text-center">
-              <div>
-                SM Entertainment는 1995년 설립 이후
-                <img
-                  src="/sec3_01.png"
-                  className="inline-block w-24 h-8 ml-2 mr-2 mb-2"
-                />
-              </div>
-              <div>K-POP을 선도하며 글로벌 시장을 개척해왔습니다.</div>
-              <div>
-                최고의 인재와 퍼포먼스로 세계에
-                <img
-                  src="/sec3_02.png"
-                  className="inline-block w-24 h-8 ml-2 mr-2 mb-2"
-                />
-                '한류'를 알리며
-              </div>
-              <div>
-                <img
-                  src="/sec3_03.png"
-                  className="inline-block w-16 h-16 mr-2"
-                />
-                글로벌 1등 기업으로 도약하겠습니다.
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <div className="mt-4 text-[64px] flex items-center">
+          최고의 인재와 퍼포먼스로 세계에&nbsp;
+          <motion.img
+            src="/sec3_02.png"
+            className="w-[148px] h-[58px] mx-2"
+            style={{ x: translateX, opacity: innerOpacity }}
+          />
+        </div>
+        <div className="text-[64px]">'한류'를 알리며</div>
 
-
-
-      </div>
+        <div className="mt-4 text-[64px] flex items-center">
+          <motion.img
+            src="/sec3_03.png"
+            className="w-[100px] h-[100px] mx-2"
+            style={{ x: translateX, opacity: innerOpacity }}
+          />
+          글로벌 1등 기업으로 도약하겠습니다.
+        </div>
+      </motion.div>
     </section>
   )
 }

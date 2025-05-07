@@ -31,8 +31,8 @@ const View06 = () => {
               <div className="grid grid-rows-2 gap-4 justify-center ">
               <div className='relative  group hover: cursor-pointer'>
               <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_02bg.png'}/>
-                  <img className='sec7_01 absolute right-4 top-[-100px] w-[300px] h-[300px]' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
-                  <img className='sec7_02 absolute left-[200px] top-[0px] w-[100px] h-[100px]' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
+                  <img className='absolute right-4 lg:top-[-100px] top-[-10px] w-[130px] lg:w-[300px] lg:h-[300px]' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
+                  <img className='absolute left-[200px] lg:top-[0px] top-[10px] w-[50px] lg:w-[100px] lg:h-[100px]' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
                 <div className='absolute bottom-4 left-4 text-white'>
                   <div className='inline-block  group'>
                     <span className="inline-block relative text-[20px] sm:text-[40px] font-bold">KWANGYA 119

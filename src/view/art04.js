@@ -7,7 +7,7 @@ const images = [
 ];
 
 export default function SlideGallery() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
 
   const nextSlide = () => {
     setIndex((prev) => (prev + 1) % images.length);
@@ -38,7 +38,7 @@ export default function SlideGallery() {
 
       <div className="relative max-w-7xl mx-auto overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-10">
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,1)_0%,transparent_50%,transparent_50%,rgba(0,0,0,1)_100%)]" />
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,1)_10%,transparent_50%,transparent_50%,rgba(0,0,0,1)_90%)]" />
   </div>
         <button
           onClick={prevSlide}
@@ -51,20 +51,18 @@ export default function SlideGallery() {
           {displayImages.map((img, idx) => {
             const isCenter = idx === 1; 
 
+
+
             return (
            
               <div
                 key={idx}
-                className={`relative transition-all duration-500 ${
-                  isCenter
-                    ? "scale-105 " 
-                    : "scale-90 " 
-                }`}
-              >
+                
+                className={`relative transition-all duration-500 ${ isCenter? "scale-105 " : "scale-90 " }`}>
                 <img
                   src={img.src}
                   alt={`slide-${idx}`}
-                  className="w-[300px] h-auto object-cover transition-all duration-500"
+                  className={`w-[300px] h-auto object-cover transition-all duration-500  ${ isCenter? "scale-105 " : "scale-90 " }`}
                 />
               </div>
             
