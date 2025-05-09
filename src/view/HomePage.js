@@ -1,4 +1,3 @@
-import Test from './test';
 import View01 from './view01';
 import View02 from './view02';
 import View04 from './view04';
@@ -13,7 +12,6 @@ export default function HomePage() {
       <View04 />
       <View05 />
       <View06 />
-      <Test/>
     </div>
   );
 }

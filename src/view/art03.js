@@ -8,7 +8,6 @@ const Art03 = () => {
   return (
     <div className="bg-black text-white w-full h-full pt-10 pl-[20px] pb-[50px] lg:pl-[190px] space-y-20">
       
-      {/* DISCOGRAPHY */}
       <section className="relative overflow-hidden">
         <div className="lg:block hidden absolute top-0 left-0 h-full w-[0.5px] bg-gradient-to-b from-white to-gray-500"></div>
         <div className="lg:ml-[100px]">
@@ -38,7 +37,6 @@ const Art03 = () => {
         </div>
       </section>
 
-      {/* SELECTED ITEMS */}
       <section className="px-2 lg:px-10">
         <div className="lg:text-[24px] text-[36px] font-bold mb-[30px]">SELECTED ITEMS</div>
         <Swiper
@@ -65,7 +63,6 @@ const Art03 = () => {
         </Swiper>
       </section>
 
-      {/* EVENTS */}
       <section className="px-2 lg:px-10">
         <div className="lg:text-[24px] text-[36px] font-bold mb-[30px]">EVENTS</div>
         <Swiper

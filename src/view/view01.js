@@ -73,12 +73,12 @@ const View01 = () => {
       <div className="absolute bottom-[50px] left-[50%] lg:bottom-[50px] lg:left-[50%] -translate-x-1/2  scroll hover:cursor-pointer">
         <img className="cursor-pointer pointer-events-auto w-8 sm:w-12 " src={process.env.PUBLIC_URL + '/scroll.png'} />
       </div>
-      <div className="absolute text-white bottom-[520px] right-[130px] sm:bottom-[180px] sm:right-[180px] lg:bottom-[50px] lg:right-[20px] text-xs sm:text-base font-medium z-30">
+      <div className="absolute text-white bottom-[50vh] right-[130px] sm:bottom-[180px] sm:right-[180px] lg:bottom-[50px] lg:right-[20px] text-xs sm:text-base font-medium z-30">
         <span className="opacity-90 text-[25px] sm:text-[30px] xl:text-[50px]">We invest in the future.</span>
       </div>
     </div>
 
-    <div className="fixed bottom-4 right-4  border border-white/50 rounded-full hover:cursor-pointer w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] lg:w-[72px] lg:h-[72px]  z-10" style={{ backdropFilter: 'blur(3.86px)', zIndex: '9999' }}>
+    <div className="fixed bottom-4 right-4  border border-white/50 rounded-full hover:cursor-pointer w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] lg:w-[72px] lg:h-[72px]  z-10" style={{ backdropFilter: 'blur(3.86px)', zIndex: '9999' }}>
       <img onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={process.env.PUBLIC_URL + '/top.png'} alt="top" className="w-full h-full scale-75 relative top-[-4px]"/>
     </div>
 
