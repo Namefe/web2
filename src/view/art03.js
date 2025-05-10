@@ -27,7 +27,7 @@ const Art03 = () => {
                   alt={`disc-${num}`}
                 />
                 <div>
-                  <div className="font-bold text-[20px]">Whiplash</div>
+                  <div className="font-bold text-[20px] mt-4 mb-2 lg:my-4">Whiplash</div>
                   <div className="text-[14px] lg:text-[12px] text-white opacity-50">The 5th mini album</div>
                   <div className="text-[14px] lg:text-[12px] text-white opacity-50">2024.10.21</div>
                 </div>
@@ -54,7 +54,7 @@ const Art03 = () => {
                 className="w-[134px] h-[190px] sm:w-[340px] sm:h-[463px]"
               />
               <div>
-                <div className="font-bold text-[20px]">Whiplash</div>
+                <div className="font-bold text-[20px] mt-4 mb-2 lg:my-4">Whiplash</div>
                 <div className="text-[14px] lg:text-[12px] text-white opacity-50">The 5th mini album</div>
                 <div className="text-[14px] lg:text-[12px] text-white opacity-50">2024.10.21</div>
               </div>
@@ -83,7 +83,7 @@ const Art03 = () => {
                   className="w-[290px] h-[185px] sm:w-[710px] sm:h-[453px]"
                 />
                 <div>
-                  <div className="font-bold text-[20px]">{titles[i]}</div>
+                  <div className="font-bold text-[20px] mt-4 mb-2 lg:my-4">{titles[i]}</div>
                   <div className="text-[12px] text-white opacity-50">{desc[i]}</div>
                   <div className="text-[12px] text-white opacity-50">2024.10.21~2024.11.21</div>
                 </div>

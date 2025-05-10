@@ -112,7 +112,7 @@ const Art01 = () => {
       playsInline
       autoPlay
     >
-      <source src={process.env.PUBLIC_URL + '/aespaVideo.mp4'} type="video/mp4" />
+      <source src={process.env.PUBLIC_URL + '/aespaVideo2.mp4'} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   )}

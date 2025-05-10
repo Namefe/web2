@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <>
         <footer>
+        <div className='w-full h-[1px] line' ></div>
       <section className=" w-full h-auto bg-black text-white  px-6 py-12">
         <div className='footer1 xl:flex xl:justify-between'>
       <div>
@@ -23,6 +24,7 @@ const Footer = () => {
         </div>
       </div>
       </div>
+      <div className='w-full h-[1px] line' ></div>
       <div className="footer2 inline-block my-8 w-full xl:flex xl:justify-between">
       <div className='block'>
         <h3 className='font-bold mt-4 text-[14px] sm:text-[16px]'>OUR COMMUNITY</h3>

@@ -138,18 +138,18 @@ const View05 = () => {
 </section> */}
 
 
-<section className="block md:hidden w-full bg-black text-white font-bold px-2 py-8">
+<section className="block md:hidden w-full bg-black text-white font-bold py-8">
       <div className="text-center mb-8">
         <div className="text-[36px] inline-block mr-2 text-pink-300">SM</div>
         <div className="text-[36px] inline-block">ARTISTS</div>
         <div className="text-[14px] mt-2">SM의 빛나는 성장을 함께한 주요 아티스트</div>
       </div>
 
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-clip">
         <div className="flex flex-col gap-4 relative">
           <div
             ref={scrollSectionMobile1}
-            className="flex flex-row gap-4 relative overflow-x-auto scrollbar-hidden"
+            className="flex flex-row gap-4 relative"
             style={{ transform: 'translateX(-20px)' }}
           >
             <img className="w-[300px] h-[176px] flex-none " src="/sm12.png" />
@@ -160,7 +160,7 @@ const View05 = () => {
 
           <div
             ref={scrollSectionMobile2}
-            className="flex flex-row gap-4 relative overflow-x-auto scrollbar-hidden"
+            className="flex flex-row gap-4 relative "
           >
             <img className="w-[300px] h-[176px] flex-none" src="/sm1.png" />
             <img className="w-[300px] h-[176px] flex-none" src="/sm7.png" />
@@ -170,7 +170,7 @@ const View05 = () => {
 
           <div
             ref={scrollSectionMobile3}
-            className="flex flex-row gap-4 relative overflow-x-auto scrollbar-hidden"
+            className="flex flex-row gap-4 relative "
           >
             <img className="w-[300px] h-[176px] flex-none" src="/sm2.png" />
             <img className="w-[300px] h-[176px] flex-none" src="/sm5.png" />
