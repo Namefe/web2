@@ -114,7 +114,7 @@ const Art02 = () => {
   return (
     <div className="w-full h-full bg-black text-white">
       {accordionData.map((item, index) => (
-        <div key={index} className="border-t border-b border-white overflow-hidden">
+        <div key={index} className=" border border-l-0 border-r-0 border-gradient-to-r from-white lg:via-transparent overflow-hidden">
           <button
             onClick={() => toggleIndex(index)}
             className="w-full flex justify-between items-center p-4 text-left hover:bg-gray-800 transition"

@@ -122,7 +122,7 @@ export default function Section05() {
       <div className="mt-20 lg:mt-40 flex justify-center">
         <div className="w-full md:w-[800px] px-4 md:px-0 relative">
           <div className="relative" ref={swiperContainerRef}>
-            {/* 왼쪽 이전 버튼 - 마우스를 따라다니는 */}
+            {/* 왼쪽 이전 버튼 - 마우스를 따라다니는
             {showPrevArrow && (
               <div
                 className="absolute z-10 transition-opacity cursor-pointer p-4 rounded-full"
@@ -137,7 +137,7 @@ export default function Section05() {
               </div>
             )}
 
-            {/* 오른쪽 다음 버튼 - 마우스를 따라다니는 */}
+             오른쪽 다음 버튼 - 마우스를 따라다니는 
             {showNextArrow && (
               <div
                 className="absolute z-10 transition-opacity cursor-pointer p-4 rounded-full"
@@ -150,7 +150,7 @@ export default function Section05() {
               >
                 <Arrow direction="right" color="white" strokeWidth={1} className=" md:size-20 w-16 h-16" />
               </div>
-            )}
+            )} */}
 
             <Swiper
               modules={[Navigation, Pagination, EffectCoverflow]}

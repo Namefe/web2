@@ -44,7 +44,7 @@ export default function ScrollReveal() {
 
   return (
     <section ref={sectionRef} className="relative h-[400vh] bg-black">
-      <div className="sticky top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 text-white text-[30px] lg:text-5xl font-bold text-center px-4 max-w-[90%] sm:max-w-[80%]">
+      <div className="sticky top-1/2 left-1/2  -translate-y-1/2 z-30 text-white text-[30px] lg:text-5xl font-bold text-center px-4 max-w-[90%] ">
         아시아를 넘어 글로벌 No.1을 지향합니다.
       </div>
 

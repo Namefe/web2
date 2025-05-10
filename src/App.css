@@ -28,13 +28,7 @@ html, body, #root {
     font-size:60px;
     text-align: center;
 }
-.who{
-    color:white;
-    position: absolute;
-    bottom:150px;
-    right: 150px;
-    font-size: 50px;
-}
+
 
 
 .sec1_img{
@@ -90,25 +84,12 @@ html, body, #root {
     height: 20px;
 }
 
-.policy{
-    margin-right: 70px;
-}
+
 .footer2 {
     position: relative;
   }
   
-  /* .footer2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg,rgba(153, 153, 153, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(153, 153, 153, 1) 100%);
-    z-index: 1;
-  } */
-
 
 .line {
-    background: linear-gradient(90deg, rgba(153, 153, 153, 0.50) 0%, #FFF 19.5%, rgba(153, 153, 153, 0.50) 100%)
+    background: linear-gradient(90deg,rgba(153, 153, 153, 0.5) 0%, rgba(255, 255, 255, 1) 50%, rgba(153, 153, 153, 0.5) 100%);
 }

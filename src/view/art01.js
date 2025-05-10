@@ -20,16 +20,12 @@ const Art01 = () => {
   return (
     <div className='relative w-full min-h-screen text-white bg-black overflow-hidden'>
       <img className='absolute top-0 left-0 object-cover w-full h-full z-0' src={process.env.PUBLIC_URL + '/artist-bg.png'} />
-      <div className="absolute top-0 left-0 w-full flex justify-between items-center px-4 py-4 z-50">
+      <div className="fixed top-0 left-0 w-full flex justify-between items-center z-50">
         <img
           src={process.env.PUBLIC_URL + '/Group 1.png'}
-          className="w-10 absolute top-6 left-6 sm:w-14 sm:ml-8 sm:mt-8"
+          className="w-10 absolute top-6 left-6 sm:w-14 sm:ml-8 sm:mt-4"
           alt="로고"
         />
-        <div className="absolute top-0 left-[90px] lg:top-0 lg:left-[200px] leading-tight">
-          <h1 className="text-[50px] sm:text-[70px] font-bold">aespa</h1>
-          <div className="text-[10px] sm:text-[18px]">æ-nergy Unleashed<br /> aespa coming soon</div>
-        </div>
         <button onClick={toggleMenu}>
           <img
             src={process.env.PUBLIC_URL + '/bar.svg'}
@@ -38,6 +34,10 @@ const Art01 = () => {
           />
         </button>
       </div>
+      <div className="absolute top-0 left-[90px] lg:top-0 lg:left-[200px] leading-tight">
+          <h1 className="text-[50px] sm:text-[70px] font-bold">aespa</h1>
+          <div className="text-[10px] sm:text-[18px]">æ-nergy Unleashed<br /> aespa coming soon</div>
+        </div>
 
       {isMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-black text-white z-[9999] transition-all duration-300">
@@ -128,9 +128,9 @@ const Art01 = () => {
             <span className="lg:block hidden opacity-90 text-[20px] sm:text-[30px] xl:text-[50px]">THE 5TH ALBUM</span>
           </div>
         </div>
-        <div className="lg:block hidden absolute top-0 bottom-0 left-[140px] w-px line1" ></div>
-        <div className="lg:block hidden absolute top-0 bottom-0 right-[140px] w-px line1" ></div>
-        <div className="absolute left-0 right-0 bottom-[100px] h-px line2"></div>
+        <div className="lg:block hidden absolute top-0 bottom-0 left-[140px] w-px bg-gradient-to-b from-white to-transparent opacity-40  z-50" ></div>
+        <div className="lg:block hidden absolute top-0 bottom-0 right-[140px] w-px bg-gradient-to-b from-white to-transparent opacity-40 z-50" ></div>
+        <div className="absolute left-0 right-0 bottom-[100px] h-px  bg-gradient-to-r from-white lg:via-transparent lg:to-transparent lg:opacity-40 z-50"></div>
       </div>
     </div>
   );

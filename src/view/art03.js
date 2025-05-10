@@ -6,11 +6,11 @@ import { FreeMode } from 'swiper/modules';
 
 const Art03 = () => {
   return (
-    <div className="bg-black text-white w-full h-full pt-10 pl-[20px] pb-[50px] lg:pl-[190px] space-y-20">
+    <div className="bg-black text-white w-full h-full  pl-[20px] pb-[50px] lg:pl-[190px] space-y-20">
       
       <section className="relative overflow-hidden">
-        <div className="lg:block hidden absolute top-0 left-0 h-full w-[0.5px] bg-gradient-to-b from-white to-gray-500"></div>
-        <div className="lg:ml-[100px]">
+        <div className="lg:block hidden absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-white to-transparent opacity-40"></div>
+        <div className=" pt-10 lg:ml-[100px]">
           <div className="text-[36px] lg:text-[24px] font-bold mb-[30px]">DISCOGRAPHY</div>
           <Swiper
             modules={[FreeMode]}

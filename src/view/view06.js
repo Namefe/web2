@@ -9,10 +9,10 @@ const View06 = () => {
             ENTERTAINMENT CONNECTS FANS AND ARTIST            
               <img className='inline-block relative left-[4px] top-[-4px]' src={process.env.PUBLIC_URL + '/sec5_01.png'}/>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              <div className="relative col-span-2 aspect-[3/2]  group hover: cursor-pointer">
+            <div className=" xl:grid grid-cols-3 gap-4">
+              <div className="relative col-span-2 mb-4 xl:mb-0  group hover: cursor-pointer">
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_01.png'}/>
-                <div className="absolute bottom-6 left-6 text-white">
+                <div className="absolute bottom-2 left-2 lg:bottom-6 lg:left-6 text-white">
                   <div className='inline-block text-white  text-[20px] sm:text-[36px] group'>
                     <span className="inline-block relative font-bold">SMTOWN
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -33,7 +33,7 @@ const View06 = () => {
               <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_02bg.png'}/>
                   <img className='absolute right-4 lg:top-[-100px] top-[-10px] w-[130px] lg:w-[300px] lg:h-[300px]' src={process.env.PUBLIC_URL + '/sec7_02_1.png'}/>
                   <img className='absolute left-[200px] lg:top-[0px] top-[10px] w-[50px] lg:w-[100px] lg:h-[100px]' src={process.env.PUBLIC_URL + '/sec7_02_2.png'}/>
-                <div className='absolute bottom-4 left-4 text-white'>
+                <div className='absolute bottom-2 left-2 lg:bottom-4 lg:left-4 text-white'>
                   <div className='inline-block  group'>
                     <span className="inline-block relative text-[20px] sm:text-[40px] font-bold">KWANGYA 119
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -44,7 +44,7 @@ const View06 = () => {
               </div>
               <div className='relative  group hover: cursor-pointer'>
                 <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + '/sec7_03.png'}/>
-                  <div className='absolute bottom-4 left-4 text-white '>
+                  <div className='absolute bottom-2 left-2 lg:bottom-4 lg:left-4 text-white '>
                   <div className='inline-block  group'>
                     <span className="inline-block relative text-[20px] sm:text-[40px] font-bold">SMTOWN 30
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
