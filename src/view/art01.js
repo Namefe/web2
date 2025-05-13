@@ -2,21 +2,34 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Art01 = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const videoRef = useRef(null); 
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+const [isVideoPaused, setIsVideoPaused] = useState(false);
+const [isHovered, setIsHovered] = useState(false);
+const videoRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
-  const handlePlayClick = () => {
-    setIsVideoPlaying(true); 
-    setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.play();
-      }
-    }, 0); 
-  };
+const handlePlayClick = () => {
+  setIsVideoPlaying(true);
+  setTimeout(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsVideoPaused(false);
+    }
+  }, 0);
+};
 
+const togglePlayPause = () => {
+  if (!videoRef.current) return;
+  if (videoRef.current.paused) {
+    videoRef.current.play();
+    setIsVideoPaused(false);
+  } else {
+    videoRef.current.pause();
+    setIsVideoPaused(true);
+  }
+};
   return (
     <div className='relative w-full min-h-screen text-white bg-black overflow-hidden'>
       <img className='absolute top-0 left-0 object-cover w-full h-full z-0' src={process.env.PUBLIC_URL + '/artist-bg.png'} />
@@ -85,7 +98,8 @@ const Art01 = () => {
         <img onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} src={process.env.PUBLIC_URL + '/top.png'} alt="top" className="w-full h-full scale-75 relative top-[-4px]" />
       </div>
 
-      <div className="relative w-full h-screen flex items-center justify-center">
+<div className="relative w-full h-screen flex items-center justify-center">
+
   {!isVideoPlaying && (
     <button
       onClick={handlePlayClick}
@@ -105,18 +119,38 @@ const Art01 = () => {
   )}
 
   {isVideoPlaying && (
-    <video
-      ref={videoRef}
-      className="absolute top-0 left-0 w-full h-full object-cover z-40"
-      muted
-      playsInline
-      autoPlay
+    <div
+      className="absolute top-0 left-0 w-full h-full z-40"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <source src={process.env.PUBLIC_URL + '/aespaVideo2.mp4'} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover"
+        muted
+        playsInline
+        autoPlay
+      >
+        <source src={process.env.PUBLIC_URL + '/aespaVideo2.mp4'} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {isHovered && (
+        <button
+          onClick={togglePlayPause}
+          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-50 w-[80px] h-[80px]"
+        >
+          <img
+            src={process.env.PUBLIC_URL + (isVideoPaused ? '/play.png' : '/hoverplay.png')}
+            alt={isVideoPaused ? '재생' : '일시정지'}
+            className="w-full h-full"
+          />
+        </button>
+      )}
+    </div>
   )}
 </div>
+
 
       <div>
         <div>

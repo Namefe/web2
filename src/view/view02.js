@@ -34,13 +34,14 @@ export default function ScrollReveal() {
   ])
   const opacityContent = useTransform(scrollYProgress, [0.3, 0.4], [0, 1])
 
-  const translateX = useTransform(scrollYProgress, [0.35, 0.45], [-100, 0])
   const innerOpacity = useTransform(scrollYProgress, [0.35, 0.45], [0, 1])
 
   const innerTextOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1])
   
-  // ✅ 모바일이면 100px, 아니면 148px
+
   const imgWidth = useTransform(scrollYProgress, [0.5, 0.65], [0, isMobile ? 50 : 148])
+
+  const scaleText = useTransform(scrollYProgress, [0.3, 0.6], [0.6, 1])
 
   return (
     <section ref={sectionRef} className="relative h-[400vh] bg-black">
@@ -68,7 +69,7 @@ export default function ScrollReveal() {
         >
           <motion.div
             className="text-[20px] lg:text-[64px] text-center flex items-center"
-            style={{ opacity: innerTextOpacity }}
+            style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             SM Entertainment는 1995년 설립 이후&nbsp;
             <div className="overflow-hidden flex items-center">
@@ -82,14 +83,14 @@ export default function ScrollReveal() {
 
           <motion.div
             className="text-[20px] lg:text-[64px] text-center"
-            style={{ opacity: innerTextOpacity }}
+            style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             K-POP을 선도하며 글로벌 시장을 개척해왔습니다.
           </motion.div>
 
           <motion.div
   className="mt-4 text-[20px] lg:text-[64px] text-center leading-snug"
-  style={{ opacity: innerTextOpacity }}
+  style={{ opacity: innerTextOpacity , scale: scaleText,}}
 >
   최고의 인재와 퍼포먼스로 세계에&nbsp;
   <motion.img
@@ -102,7 +103,7 @@ export default function ScrollReveal() {
 
           <motion.div
             className="mt-4 text-[20px] lg:text-[64px] flex items-center leading-snug text-center"
-            style={{ opacity: innerTextOpacity }}
+            style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             <div className="overflow-hidden flex items-center">
               <motion.img

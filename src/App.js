@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import HomePage from './view/HomePage';
 import Artist from './view/Artist';
 import { Link } from 'react-router-dom';
@@ -9,31 +9,52 @@ import Footer from './view/footer';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDarkSection, setIsDarkSection] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
 
-  const Header = () => {
-    const location = useLocation();
-  
-    return (
-      <header className="fixed text-white top-0 left-0 w-full flex justify-between items-center p-4 z-[500]">
-      <div className="flex items-center gap-2">
-        <img src={process.env.PUBLIC_URL + '/Group 1.png'} className="w-10 sm:w-14 sm:ml-4" alt="로고" />
-        <span className=" text-xs sm:text-sm tracking-widest font-semibold ml-12">
-          SM<br />ENTERTAINMENT
-        </span>
-      </div>
 
-      <button onClick={toggleMenu} className="text-white text-xl sm:text-2xl hover:cursor-pointer">
-        {isMenuOpen ? (
-          <img src={process.env.PUBLIC_URL + '/close.png'} className=" sm:w-8 sm:mr-4" alt="닫기버튼" />
-        ) : (
-          <img src={process.env.PUBLIC_URL + '/bar.svg'} className=" sm:w-8 sm:mr-4" alt="메뉴버튼" />
-        )}
-      </button>
-    </header>
+  
+  const Header = ({ isDarkSection }) => {  
+    return (
+      <header
+        className={`fixed top-0 left-0 w-full flex justify-between items-center p-4 z-[500] transition-colors duration-300 ${
+          isDarkSection ? 'text-black bg-transparent' : 'text-white bg-transparent'
+        }`}
+      >
+  <div className="flex items-center gap-2">
+    <img
+      src={
+    isDarkSection
+      ? process.env.PUBLIC_URL + '/logo_black.png' 
+      : process.env.PUBLIC_URL + '/Group 1.png' 
+  }
+      className="w-10 sm:w-14 sm:ml-4"
+      alt="로고"
+    />
+    <span className="text-xs sm:text-sm tracking-widest font-bold ml-12">
+      SM<br />ENTERTAINMENT
+    </span>
+  </div>
+
+<button onClick={toggleMenu} className="text-xl sm:text-2xl hover:cursor-pointer">
+  <img
+    src={
+      isMenuOpen
+        ? (isDarkSection
+            ? process.env.PUBLIC_URL + '/close.png'
+            : process.env.PUBLIC_URL + '/close.png')
+        : (isDarkSection
+            ? process.env.PUBLIC_URL + '/bar_black.png'
+            : process.env.PUBLIC_URL + '/bar.svg')
+    }
+    alt={isMenuOpen ? '닫기버튼' : '메뉴버튼'}
+  />
+</button>
+</header>
+
     );
   };
 
@@ -79,21 +100,21 @@ function App() {
 
   return (
     <Router>
-    {isMenuOpen && <Menu />}
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <Header />
-            <HomePage />
-          </>
-        }
-      />
-      <Route path="/artists" element={<Artist />} />
-    </Routes>
-    <Footer />
-  </Router>
+      {isMenuOpen && <Menu />}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header isDarkSection={isDarkSection} />
+              <HomePage onDarkSectionChange={setIsDarkSection} />
+            </>
+          }
+        />
+        <Route path="/artists" element={<Artist />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

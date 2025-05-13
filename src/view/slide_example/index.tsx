@@ -4,22 +4,16 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import type SwiperType from "swiper";
-import Arrow from "@/components/svg/Arrow";
 
 // swiper 수정하기 nintendo
 
 export default function Section05() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [prevArrowPosition, setPrevArrowPosition] = useState({ x: 0, y: 0 });
-  const [nextArrowPosition, setNextArrowPosition] = useState({ x: 0, y: 0 });
-  const [showPrevArrow, setShowPrevArrow] = useState(false);
-  const [showNextArrow, setShowNextArrow] = useState(false);
 
-  const swiperRef = useRef<SwiperType>();
-  const swiperContainerRef = useRef<HTMLDivElement>(null);
+
+  const swiperRef = useRef();
+  const swiperContainerRef = useRef(null);
 
   const slideData = [
     {
@@ -54,51 +48,14 @@ export default function Section05() {
     },
   ];
 
-  const handlePrevClick = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
 
-  const handleNextClick = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+
 
   useEffect(() => {
     const container = swiperContainerRef.current;
     if (!container) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
 
-      // 컨테이너 너비의 1/3을 기준으로 왼쪽/오른쪽 영역 구분
-      const containerWidth = rect.width;
-
-      if (x < containerWidth / 3) {
-        // 왼쪽 1/3 영역 - prev 화살표만 보이기
-        setShowPrevArrow(true);
-        setShowNextArrow(false);
-        setPrevArrowPosition({ x, y });
-      } else if (x > (containerWidth * 2) / 3) {
-        // 오른쪽 1/3 영역 - next 화살표만 보이기
-        setShowPrevArrow(false);
-        setShowNextArrow(true);
-        setNextArrowPosition({ x, y });
-      } else {
-        // 중앙 영역 - 화살표 숨기기
-        setShowPrevArrow(false);
-        setShowNextArrow(false);
-      }
-    };
-
-    const handleMouseLeave = () => {
-      setShowPrevArrow(false);
-      setShowNextArrow(false);
-    };
 
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
@@ -122,35 +79,7 @@ export default function Section05() {
       <div className="mt-20 lg:mt-40 flex justify-center">
         <div className="w-full md:w-[800px] px-4 md:px-0 relative">
           <div className="relative" ref={swiperContainerRef}>
-            {/* 왼쪽 이전 버튼 - 마우스를 따라다니는
-            {showPrevArrow && (
-              <div
-                className="absolute z-10 transition-opacity cursor-pointer p-4 rounded-full"
-                style={{
-                  left: `${prevArrowPosition.x}px`,
-                  top: `${prevArrowPosition.y}px`,
-                  transform: "translate(-50%, -50%)",
-                }}
-                onClick={handlePrevClick}
-              >
-                <Arrow direction="left" color="white" strokeWidth={1} className=" md:size-20 w-16 h-16" />
-              </div>
-            )}
 
-             오른쪽 다음 버튼 - 마우스를 따라다니는 
-            {showNextArrow && (
-              <div
-                className="absolute z-10 transition-opacity cursor-pointer p-4 rounded-full"
-                style={{
-                  left: `${nextArrowPosition.x}px`,
-                  top: `${nextArrowPosition.y}px`,
-                  transform: "translate(-50%, -50%)",
-                }}
-                onClick={handleNextClick}
-              >
-                <Arrow direction="right" color="white" strokeWidth={1} className=" md:size-20 w-16 h-16" />
-              </div>
-            )} */}
 
             <Swiper
               modules={[Navigation, Pagination, EffectCoverflow]}

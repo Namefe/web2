@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const View06 = () => {
   return (
     <>
@@ -48,7 +50,8 @@ const View06 = () => {
                   <div className='inline-block  group'>
                     <span className="inline-block relative text-[20px] sm:text-[40px] font-bold">SMTOWN 30
                     <span className="absolute left-0 -bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </span></div>
+                    </span>
+                    </div>
                     <img className='inline-block relative top-[-4px] sm:top-[-13px] sm:left-[4px] scale-75 ' src={process.env.PUBLIC_URL + '/화살표.png'}/>
                     <div className='text-[14px] sm:text-[16px]'>SM TOWN의 30주년 이벤트를 체험해보세요.</div>
                   </div>
