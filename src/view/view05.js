@@ -2,41 +2,27 @@ import { useEffect, useRef } from 'react';
 
 
 const View05 = () => {
-
-  const scrollSectionMobile1 = useRef(null);
-  const scrollSectionMobile2 = useRef(null);
-  const scrollSectionMobile3 = useRef(null);
-
-  const handleWheel = (e, sectionRef) => {
-    if (e.deltaY !== 0 && sectionRef.current) {
-      e.preventDefault(); 
-      sectionRef.current.scrollBy({
-        left: e.deltaY > 0 ? 200 : -200,
-        behavior: 'smooth',
-      });
-    }
-  };
+  const rowsRef = useRef([]);
 
   useEffect(() => {
-    const section1 = scrollSectionMobile1.current;
-    const section2 = scrollSectionMobile2.current;
-    const section3 = scrollSectionMobile3.current;
+    rowsRef.current.forEach((row) => {
+      if (!row) return;
 
-    const wheelHandler1 = (e) => handleWheel(e, scrollSectionMobile1);
-    const wheelHandler2 = (e) => handleWheel(e, scrollSectionMobile2);
-    const wheelHandler3 = (e) => handleWheel(e, scrollSectionMobile3);
+      const onWheel = (e) => {
+        // 수직 스크롤을 가로로 대체
+        e.preventDefault();
+        row.scrollLeft += e.deltaY;
+      };
 
-    section1.addEventListener('wheel', wheelHandler1, { passive: false });
-    section2.addEventListener('wheel', wheelHandler2, { passive: false });
-    section3.addEventListener('wheel', wheelHandler3, { passive: false });
+      row.addEventListener("wheel", onWheel, { passive: false });
 
-    return () => {
-      section1.removeEventListener('wheel', wheelHandler1);
-      section2.removeEventListener('wheel', wheelHandler2);
-      section3.removeEventListener('wheel', wheelHandler3);
-    };
+      return () => row.removeEventListener("wheel", onWheel);
+    });
   }, []);
-  
+
+
+
+
   return (
     <>
     <section  className="pc hidden md:block w-full bg-black text-white  px-0 py-12 z-20">
@@ -138,48 +124,47 @@ const View05 = () => {
 </section> */}
 
 
-<section className="block md:hidden w-full bg-black text-white font-bold py-8">
-      <div className="text-center mb-8">
-        <div className="text-[36px] inline-block mr-2 text-pink-300">SM</div>
-        <div className="text-[36px] inline-block">ARTISTS</div>
-        <div className="text-[14px] mt-2">SM의 빛나는 성장을 함께한 주요 아티스트</div>
-      </div>
+<section className="block md:hidden bg-black text-white font-bold py-8">
+  <div className="text-center mb-8">
+    <div className="text-[36px] text-pink-300 inline-block mr-2">SM</div>
+    <div className="text-[36px] inline-block">ARTISTS</div>
+    <div className="text-[14px] mt-2">SM의 빛나는 성장을 함께한 주요 아티스트</div>
+  </div>
 
-      <div className="w-full overflow-x-clip">
-        <div className="flex flex-col gap-4 relative">
-          <div
-            ref={scrollSectionMobile1}
-            className="flex flex-row gap-4 relative"
-            style={{ transform: 'translateX(-20px)' }}
-          >
-            <img className="w-[300px] h-[176px] flex-none " src="/sm12.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm10.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm9.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm6.png" />
-          </div>
+  {/* 각 줄을 별도로 스크롤 가능하게 */}
+  <div className="space-y-6 px-4">
+    {/* 첫 번째 줄 */}
+    <div
+    ref={(el) => (rowsRef.current[0] = el)}
+    className="overflow-x-auto no-scrollbar flex gap-4 transform -translate-x-[100px] whitespace-nowrap">
+      <img src={`${process.env.PUBLIC_URL}/sm12.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm10.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm9.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm6.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+    </div>
 
-          <div
-            ref={scrollSectionMobile2}
-            className="flex flex-row gap-4 relative "
-          >
-            <img className="w-[300px] h-[176px] flex-none" src="/sm1.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm7.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm8.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm3.png" />
-          </div>
+    {/* 두 번째 줄 */}
+    <div
+    ref={(el) => (rowsRef.current[1] = el)}
+    className="overflow-x-auto no-scrollbar flex gap-4 flex-row-reverse">
+      <img src={`${process.env.PUBLIC_URL}/sm1.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm7.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm8.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm3.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+    </div>
 
-          <div
-            ref={scrollSectionMobile3}
-            className="flex flex-row gap-4 relative "
-          >
-            <img className="w-[300px] h-[176px] flex-none" src="/sm2.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm5.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm4.png" />
-            <img className="w-[300px] h-[176px] flex-none" src="/sm11.png" />
-          </div>
-        </div>
-      </div>
-    </section>
+    {/* 세 번째 줄 */}
+    <div
+    ref={(el) => (rowsRef.current[2] = el)}
+    className="overflow-x-auto no-scrollbar flex gap-4">
+      <img src={`${process.env.PUBLIC_URL}/sm2.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm5.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm4.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/sm11.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+    </div>
+  </div>
+</section>
+
     </>
   )
 }

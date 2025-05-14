@@ -68,7 +68,7 @@ export default function ScrollReveal() {
           }}
         >
           <motion.div
-            className="text-[20px] lg:text-[64px] text-center flex items-center"
+            className="text-[20px] lg:text-[40px] xl:text-[56px] 2xl:text-[64px] h-screen text-center flex items-center"
             style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             SM Entertainment는 1995년 설립 이후&nbsp;
@@ -82,14 +82,14 @@ export default function ScrollReveal() {
           </motion.div>
 
           <motion.div
-            className="text-[20px] lg:text-[64px] text-center"
+            className="text-[20px] lg:text-[40px] xl:text-[56px] 2xl:text-[64px] text-center"
             style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             K-POP을 선도하며 글로벌 시장을 개척해왔습니다.
           </motion.div>
 
           <motion.div
-  className="mt-4 text-[20px] lg:text-[64px] text-center leading-snug"
+  className="mt-4 text-[20px] lg:text-[40px] xl:text-[56px] 2xl:text-[64px] text-center leading-snug"
   style={{ opacity: innerTextOpacity , scale: scaleText,}}
 >
   최고의 인재와 퍼포먼스로 세계에&nbsp;
@@ -102,7 +102,7 @@ export default function ScrollReveal() {
 </motion.div>
 
           <motion.div
-            className="mt-4 text-[20px] lg:text-[64px] flex items-center leading-snug text-center"
+            className="mt-4 text-[20px] lg:text-[40px] xl:text-[56px] 2xl:text-[64px] flex items-center leading-snug text-center"
             style={{ opacity: innerTextOpacity , scale: scaleText, }}
           >
             <div className="overflow-hidden flex items-center">

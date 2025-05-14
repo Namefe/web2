@@ -5,7 +5,6 @@ const View01 = () => {
     <section className='relative w-full  min-h-screen bg-black  overflow-hidden'>
 <div className="relative w-full h-screen z-10">
 
-{/* 이미지 1 + 블러 */}
 <div className="absolute top-[40%] left-[5%] lg:top-[65%] lg:left-[8%] -translate-x-1/2 -translate-y-1/2 scale-[0.5] lg:scale-[1] z-50">
   <div className="relative inline-block overflow-hidden">
     <img
@@ -17,7 +16,6 @@ const View01 = () => {
   </div>
 </div>
 
-{/* 이미지 2 + 블러 */}
 <div className="absolute top-[27%] left-[10%] 2xl:top-[40%] 2xl:left-[25%] -translate-x-1/2 -translate-y-1/2 scale-[1] 2xl:scale-[0.8]">
   <div className="relative inline-block overflow-hidden">
     <img src={process.env.PUBLIC_URL + '/2.png'} className="relative z-10" />
@@ -34,25 +32,21 @@ const View01 = () => {
   </div>
 </div>
 
-{/* 이미지 3 */}
 <img
   src={process.env.PUBLIC_URL + '/3.png'}
   className="absolute top-[20%] left-[40%]  lg:top-[10%] lg:left-[40%] -translate-x-1/2 -translate-y-1/2 scale-[0.4] lg:scale-[0.7]"
 />
 
-{/* 이미지 4 */}
 <img
   src={process.env.PUBLIC_URL + '/4.png'}
   className="absolute top-[18%] left-[95%] lg:top-[5%] lg:left-[65%] -translate-x-1/2 -translate-y-1/2 scale-[0.8]"
 />
 
-{/* 이미지 5 */}
 <img
   src={process.env.PUBLIC_URL + '/5.png'}
   className="absolute top-[45%] left-[80%] -translate-x-1/2 z-10 -translate-y-1/2 scale-[0.5] lg:scale-[1]"
 />
 
-{/* 이미지 6 */}
 <img
   src={process.env.PUBLIC_URL + '/6.png'}
   className="absolute top-[60%] left-[90%] lg:top-[100%] lg:left-[90%] -translate-x-1/2 -translate-y-1/2 scale-[0.6] lg:scale-[1]"
