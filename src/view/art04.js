@@ -97,20 +97,24 @@ export default function SlideGallery() {
       {/* 설명 영역 */}
       <div className="mt-10 pl-[50px] text-left max-w-2xl mb-[200px] mx-auto px-4">
         <div className="text-[20px] lg:text-[24px] font-bold mb-4">SMTOWN LIVE 2025</div>
-        <div className="text-[14px] lg:text-[16px] text-white opacity-80 mb-2 leading-relaxed ">
+        <div className="text-[14px] lg:text-[16px] text-white opacity-80 mb-8 leading-relaxed ">
           1995년 2월 14일 창립한 SM은 내년 30주년을 맞아 소속 아티스트들이 총출동하는
           에스엠타운 라이브 콘서트, SM만의 특별한 음악을 만날 수 있는 다채롭고 의미 있는 온·오프라인 프로젝트를 전개한다.
         </div>
         <div className="mb-8 ">
-          <div className="text-[20px] lg:text-[24px] ">공연일정</div>
+          <div className="text-[20px] lg:text-[24px] mb-4">공연일정</div>
           <div className="text-[14px] lg:text-[16px] text-white opacity-80">
             장소 - GOCHEOK SKY DOME / 일시 - 01.11 SAT ~ 01.12 SUN
           </div>
         </div>
-        <div className="relative">
-          <button className="absolute top-0 left-[50%] -translate-x-1/2  w-[260px] h-[60px] lg:w-[465px] lg:h-[56px] inline-flex justify-center items-center bg-gradient-to-r from-[#1C0C0A] to-[#09121D] gap-2 px-6 py-2 border border-gray-500 text-[14px]">
+        <div className="relative mt-12 w-full flex justify-center items-center">
+          <button className="text-center w-full h-[60px] lg:w-[465px] lg:h-[56px] inline-flex justify-center items-center bg-gradient-to-r from-[#1C0C0A] to-[#09121D] gap-2 px-6 py-2 border border-gray-500 text-[14px]">
             공연 정보 더 보기
-            <img src="/down.png" alt="More" />
+            <div className='pt-0.5'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                <path d="M0.679688 1.08203L5.17962 5.08203L9.67969 1.08203" stroke="white"/>
+              </svg>
+            </div>
           </button>
         </div>
       </div>

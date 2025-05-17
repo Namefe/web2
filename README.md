@@ -1,3 +1,17 @@
+# 250517
+
+## 메인
+
+글자 https://www.dafont.com/vortigra.font?text=CUL
+otf적용하는법 찾아서 적용
+
+모바일버전 메인 따로 적용
+
+SM ARTIST 섹션
+스크롤에 따라 움직이게
+
+---
+
 # 250510
 
 ## 메인
