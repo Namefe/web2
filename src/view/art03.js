@@ -1,26 +1,19 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import { FreeMode } from 'swiper/modules';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import { FreeMode } from "swiper/modules";
 
 const Art03 = () => {
   return (
     <div className="bg-black text-white w-full h-full  pl-[20px] pb-[50px] lg:pl-[190px] space-y-20">
-      
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden !pt-40">
         <div className="lg:block hidden absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-white to-transparent opacity-40"></div>
         <div className=" pt-10 lg:ml-[100px]">
           <div className="text-[36px] lg:text-[24px] font-bold mb-[30px]">DISCOGRAPHY</div>
-          <Swiper
-            modules={[FreeMode]}
-            spaceBetween={60}
-            slidesPerView="auto"
-            freeMode={true}
-            className="pb-4"
-          >
+          <Swiper modules={[FreeMode]} spaceBetween={60} slidesPerView="auto" freeMode={true} className="pb-4">
             {[1, 2, 3].map((num) => (
-              <SwiperSlide key={num} style={{ width: 'auto' }}>
+              <SwiperSlide key={num} style={{ width: "auto" }}>
                 <img
                   className="w-[211px] sm:w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                   src={process.env.PUBLIC_URL + `/artsec3_0${num}.png`}
@@ -37,17 +30,11 @@ const Art03 = () => {
         </div>
       </section>
 
-      <section className="px-2 lg:px-10">
+      <section className="px-2 lg:px-10 !mt-40">
         <div className="lg:text-[24px] text-[36px] font-bold mb-[30px]">SELECTED ITEMS</div>
-        <Swiper
-          modules={[FreeMode]}
-          spaceBetween={20}
-          slidesPerView="auto"
-          freeMode={true}
-          className="pb-4"
-        >
+        <Swiper modules={[FreeMode]} spaceBetween={20} slidesPerView="auto" freeMode={true} className="pb-4">
           {[1, 2, 3, 4, 5].map((num) => (
-            <SwiperSlide key={num} style={{ width: 'auto' }}>
+            <SwiperSlide key={num} style={{ width: "auto" }}>
               <img
                 src={process.env.PUBLIC_URL + `/artsec4_0${num}.png`}
                 alt={`item-${num}`}
@@ -63,20 +50,14 @@ const Art03 = () => {
         </Swiper>
       </section>
 
-      <section className="px-2 lg:px-10">
+      <section className="px-2 lg:px-10 !mt-40">
         <div className="lg:text-[24px] text-[36px] font-bold mb-[30px]">EVENTS</div>
-        <Swiper
-          modules={[FreeMode]}
-          spaceBetween={20}
-          slidesPerView="auto"
-          freeMode={true}
-          className="pb-4"
-        >
+        <Swiper modules={[FreeMode]} spaceBetween={20} slidesPerView="auto" freeMode={true} className="pb-4">
           {[1, 2, 3].map((num, i) => {
-            const titles = ['광야로 쓱-걸어가', '1ST ANNIVERSARY', 'BUBBLE POP'];
-            const desc = ['KWANGYA X SSG.COM', 'SM TOWN', 'SM TOWN'];
+            const titles = ["광야로 쓱-걸어가", "1ST ANNIVERSARY", "BUBBLE POP"];
+            const desc = ["KWANGYA X SSG.COM", "SM TOWN", "SM TOWN"];
             return (
-              <SwiperSlide key={num} style={{ width: 'auto' }}>
+              <SwiperSlide key={num} style={{ width: "auto" }}>
                 <img
                   src={process.env.PUBLIC_URL + `/artsec5_0${num}.png`}
                   alt={`event-${num}`}
