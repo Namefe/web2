@@ -1,23 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const View05 = () => {
-  const rowsRef = useRef([]);
+  
+
+  const sectionRef = useRef(null);
+  const [relativeScroll, setRelativeScroll] = useState(0);
 
   useEffect(() => {
-    rowsRef.current.forEach((row) => {
-      if (!row) return;
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
 
-      const onWheel = (e) => {
-        // 수직 스크롤을 가로로 대체
-        e.preventDefault();
-        row.scrollLeft += e.deltaY;
-      };
+      const sectionTop = section.getBoundingClientRect().top;
+      const startOffset = window.innerHeight * 0.3; 
+      const scrollValue = Math.max(0, startOffset - sectionTop);
+      setRelativeScroll(scrollValue);
+    };
 
-      row.addEventListener("wheel", onWheel, { passive: false });
-
-      return () => row.removeEventListener("wheel", onWheel);
-    });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
 
   return (
     <>
@@ -215,46 +219,63 @@ const View05 = () => {
 
 </section> */}
 
-      <section className="block md:hidden bg-black text-white font-bold py-8">
-        <div className="text-center mb-8">
-          <div className="text-[36px] text-pink-300 inline-block mr-2">SM</div>
-          <div className="text-[36px] inline-block">ARTISTS</div>
-          <div className="text-[14px] mt-2">SM의 빛나는 성장을 함께한 주요 아티스트</div>
-        </div>
+     <section
+      ref={sectionRef}
+      className="block md:hidden bg-black text-white font-bold  relative"
+    >
+      <div className="sticky top-0 bg-black py-8 z-10 text-center">
+        <div className="text-[36px] text-pink-300 inline-block mr-2">SM</div>
+        <div className="text-[36px] inline-block">ARTISTS</div>
+        <div className="text-[14px] mt-2">SM의 빛나는 성장을 함께한 주요 아티스트</div>
+      </div>
 
-        {/* 각 줄을 별도로 스크롤 가능하게 */}
-        <div className="space-y-6 px-4">
-          {/* 첫 번째 줄 */}
-          <div
-            ref={(el) => (rowsRef.current[0] = el)}
-            className="overflow-x-auto no-scrollbar flex gap-4 transform -translate-x-[100px] whitespace-nowrap"
-          >
-            <img src={`${process.env.PUBLIC_URL}/sm12.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm10.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm9.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm6.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-          </div>
-
-          {/* 두 번째 줄 */}
-          <div
-            ref={(el) => (rowsRef.current[1] = el)}
-            className="overflow-x-auto no-scrollbar flex gap-4 flex-row-reverse"
-          >
-            <img src={`${process.env.PUBLIC_URL}/sm1.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm7.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm8.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm3.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-          </div>
-
-          {/* 세 번째 줄 */}
-          <div ref={(el) => (rowsRef.current[2] = el)} className="overflow-x-auto no-scrollbar flex gap-4">
-            <img src={`${process.env.PUBLIC_URL}/sm2.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm5.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm4.png`} className="w-[250px] h-[140px] flex-none object-cover" />
-            <img src={`${process.env.PUBLIC_URL}/sm11.png`} className="w-[250px] h-[140px] flex-none object-cover" />
+      <div className="sticky top-[100px] z-0 px-4">
+      <div className="overflow-hidden h-[160px] mb-2">
+      <div
+          className="flex gap-4"
+          style={{
+            transform: `translateX(calc(-320px - ${relativeScroll * 0.6}px))`,
+            transition: "transform 0.1s linear",
+          }}
+        >
+            <img src={`${process.env.PUBLIC_URL}/sm12.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm10.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm9.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm6.png`} className="w-[250px] h-[140px] object-cover" />
           </div>
         </div>
-      </section>
+
+        <div className="overflow-hidden h-[160px] mb-2">
+          <div
+            className="flex gap-4"
+            style={{
+            transform: `translateX(calc(-300px + ${relativeScroll * 0.6}px))`,
+            transition: "transform 0.1s linear",
+            }}
+            >
+            <img src={`${process.env.PUBLIC_URL}/sm1.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm7.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm8.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm3.png`} className="w-[250px] h-[140px] object-cover" />
+          </div>
+        </div>
+
+        <div className="overflow-hidden h-[160px] mb-2">
+          <div
+            className="flex gap-4"
+            style={{
+            transform: `translateX(calc(-320px - ${relativeScroll * 0.6}px))`,
+             transition: "transform 0.1s linear",
+            }}
+          >
+            <img src={`${process.env.PUBLIC_URL}/sm2.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm5.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm4.png`} className="w-[250px] h-[140px] object-cover" />
+            <img src={`${process.env.PUBLIC_URL}/sm11.png`} className="w-[250px] h-[140px] object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
     </>
   );
 };
