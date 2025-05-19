@@ -2,7 +2,7 @@ import React from "react";
 
 const View04 = () => {
   return (
-    <section className="relative sec4bg w-full text-white  bg-cover bg-center">
+    <section className="relative sec4bg w-full text-white  bg-cover bg-center z-[90]">
       <video autoPlay muted loop className="sticky top-0 left-0 w-full h-screen object-cover z-[-1]">
         <source src={process.env.PUBLIC_URL + "/BackgroundVideo.mp4"} type="video/mp4" />
       </video>

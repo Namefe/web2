@@ -6,6 +6,12 @@ body,
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'CUL';
+  src: url('./Fonts/CUL/Vortigra.otf') format('opentype');
+  font-style: normal;
+}
+
 .scrollbar-hidden {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */

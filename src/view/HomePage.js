@@ -4,6 +4,7 @@ import View02 from './view02';
 import View04 from './view04';
 import View05 from './view05';
 import View06 from './view06';
+import View01M from './view01M';
 
 export default function HomePage({ onDarkSectionChange }) {
   const section06Ref = useRef(null);
@@ -30,6 +31,7 @@ export default function HomePage({ onDarkSectionChange }) {
   return (
     <div>
       <View01 />
+      <View01M />
       <View02 />
       <View04 />
       <View05 />
