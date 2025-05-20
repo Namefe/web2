@@ -38,12 +38,14 @@ const togglePlayPause = () => {
           src={process.env.PUBLIC_URL + '/Group 1.png'}
           className="w-10 absolute top-6 left-6 sm:w-14 sm:ml-8 sm:mt-4"
           alt="로고"
+           onClick={() => window.location.href = '/artists'}
         />
         <button onClick={toggleMenu}>
           <img
             src={process.env.PUBLIC_URL + '/bar.svg'}
             className="absolute top-8 right-8 w-10 sm:w-[30px] sm:mr-8"
             alt="메뉴"
+            
           />
         </button>
       </div>
@@ -141,7 +143,7 @@ const togglePlayPause = () => {
           className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-50 w-[80px] h-[80px]"
         >
           <img
-            src={process.env.PUBLIC_URL + (isVideoPaused ? '/play.png' : '/hoverplay.png')}
+            src={process.env.PUBLIC_URL + (isVideoPaused ? '/play.png' : '/stop.png')}
             alt={isVideoPaused ? '재생' : '일시정지'}
             className="w-full h-full"
           />

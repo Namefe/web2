@@ -62,7 +62,7 @@ export default function ScrollReveal() {
           }
         >
           <motion.img
-            src="/bg.png"
+            src="/bg.jpg"
             alt="배경"
             className="w-full h-full object-cover"
             style={{
@@ -88,15 +88,23 @@ export default function ScrollReveal() {
               backgroundImage: 'url("/sec3_bg.png")',
             }}
           >
-            <motion.div
-              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem]  text-center flex items-center"
-              style={{ opacity: innerTextOpacity, scale: scaleText }}
-            >
-              SM Entertainment는 1995년 설립 이후&nbsp;
-              <div className="overflow-hidden flex items-center">
-                <motion.img src="/sec3_01.png" className="mx-2" style={{ width: imgWidth, opacity: innerOpacity }} />
-              </div>
-            </motion.div>
+          <motion.div
+            className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
+            style={{ opacity: innerTextOpacity, scale: scaleText }}
+          >
+            SM Entertainment는 1995년 설립 이후&nbsp;
+
+            <motion.img
+              src="/sec3_01.png"
+                className="w-auto max-w-[60px] lg:max-w-none origin-left"              
+                style={{
+                scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+                opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+                transformOrigin: "left center",
+              }}
+            />
+              </motion.div>
+
 
             <motion.div
               className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem]  text-center"
@@ -106,31 +114,55 @@ export default function ScrollReveal() {
             </motion.div>
 
             <motion.div
-              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem]  text-center flex items-center"
-              style={{ opacity: innerTextOpacity, scale: scaleText }}
-            >
-              최고의 인재와 퍼포먼스로 세계에&nbsp;
-              <motion.img
-                src="/sec3_02.png"
-                className="inline-block align-middle  mx-2"
-                style={{ width: imgWidth, opacity: innerOpacity }}
-              />
-              '한류'를 알리며
-            </motion.div>
+              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
+              style={{ opacity: innerTextOpacity, scale: scaleText }}>
 
-            <motion.div
-              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem]  flex items-center  text-center"
-              style={{ opacity: innerTextOpacity, scale: scaleText }}
-            >
-              {/* transform으로 변경 transform: `translateX(${imgWidth})` */}
-              <motion.div
-                className="overflow-hidden flex items-center"
-                style={{ transform: `translateX(${imgWidth})`, opacity: innerOpacity }}
-              >
-                <img src="/sec3_03.png" className="mx-2 w-10 lg:w-[76px]" />
-              </motion.div>
-              글로벌 1등 기업으로 도약하겠습니다.
-            </motion.div>
+          <motion.div
+            className="inline-block"
+            style={{
+              x: useTransform(scrollYProgress, [0.6, 0.65], [0, -30]), 
+            }}
+          >
+            최고의 인재와 퍼포먼스로 세계에
+          </motion.div>
+
+          <motion.img
+            src="/sec3_02.png"
+                className="w-auto max-w-[60px] lg:max-w-none origin-left"              
+            style={{
+              scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+              opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+              transformOrigin: "left center",
+            }}
+          />
+
+          <motion.div
+            className="inline-block"
+            style={{
+              x: useTransform(scrollYProgress, [0.6, 0.65], [0, 30]), 
+            }}
+          >
+            '한류'를 알리며
+          </motion.div>
+          </motion.div>
+
+
+          <motion.div
+            className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] flex items-center text-center"
+            style={{ opacity: innerTextOpacity, scale: scaleText }}
+          >
+            <motion.img
+              src="/sec3_03.png"
+                className="w-auto max-w-[60px] lg:max-w-none mx-2 origin-left"              
+               style={{
+                scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+                opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+                transformOrigin: "left center",
+              }}
+            />
+
+            글로벌 1등 기업으로 도약하겠습니다.
+          </motion.div>
           </motion.div>
         </motion.div>
       </section>

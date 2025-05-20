@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <section className=" w-full h-auto bg-black text-white pb-10">
+    <section className=" w-full h-fit bg-black text-white pb-4">
       <div className="w-full h-[1px] line"></div>
-      <div className="lg:flex lg:justify-between px-6  pt-12 pb-12 lg:pb-20">
+      <div className="lg:flex lg:justify-between px-6  lg:pb-4">
         <div className="mt-6">
           <img src={process.env.PUBLIC_URL + "/smlogo.png"} />
         </div>
@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full h-[1px] line px-6"></div>
-      <div className="footer2 my-4 w-full flex flex-col-reverse lg:flex-row lg:justify-between px-6   pt-12 pb-12 lg:pb-20">
+      <div className="footer2  w-full flex flex-col-reverse lg:flex-row lg:justify-between px-6   pt-12 pb-12 lg:pb-10">
         <div className="block mt-12 lg:mt-0">
           <h3 className="font-bold mt-4 mb-2 text-[14px] sm:text-[16px]">OUR COMMUNITY</h3>
           <div className="flex flex-end m-0 p-0">

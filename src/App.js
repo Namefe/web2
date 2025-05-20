@@ -27,6 +27,8 @@ function App() {
             src={isDarkSection ? process.env.PUBLIC_URL + "/logo_black.png" : process.env.PUBLIC_URL + "/Group 1.png"}
             className="w-10 sm:w-14 sm:ml-4"
             alt="로고"
+           onClick={() => window.location.href = '/'}
+
           />
           <span className="text-xs sm:text-sm tracking-widest font-bold ml-12">
             SM
