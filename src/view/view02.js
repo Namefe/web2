@@ -45,6 +45,8 @@ export default function ScrollReveal() {
 
   const maskScale = useTransform(scrollYProgress, [0, 0.3], [0.5, 1]);
 
+  const scaleX = useTransform(scrollYProgress, [0.6, 0.65], [0, 1])
+
   return (
     <>
       <div className="h-[50vh] w-full bg-black"></div>
@@ -89,7 +91,7 @@ export default function ScrollReveal() {
             }}
           >
           <motion.div
-            className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
+            className="text-base lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
             style={{ opacity: innerTextOpacity, scale: scaleText }}
           >
             SM Entertainment는 1995년 설립 이후&nbsp;
@@ -107,14 +109,14 @@ export default function ScrollReveal() {
 
 
             <motion.div
-              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem]  text-center"
+              className="text-base lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem]  text-center"
               style={{ opacity: innerTextOpacity, scale: scaleText }}
             >
               K-POP을 선도하며 글로벌 시장을 개척해왔습니다.
             </motion.div>
 
             <motion.div
-              className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
+              className="text-base lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem] text-center flex items-center"
               style={{ opacity: innerTextOpacity, scale: scaleText }}>
 
           <motion.div
@@ -126,15 +128,20 @@ export default function ScrollReveal() {
             최고의 인재와 퍼포먼스로 세계에
           </motion.div>
 
-          <motion.img
-            src="/sec3_02.png"
-                className="w-auto max-w-[60px] lg:max-w-none origin-left"              
-            style={{
-              scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-              opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-              transformOrigin: "left center",
-            }}
-          />
+            <motion.div className="flex-none w-[150px] origin-center overflow-hidden"
+             style={{
+              scaleX,
+              // opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
+           
+            }}>
+                <div className="w-[150px]">
+
+                  <img
+                    src="/sec3_02.png"
+                        className="w-[150px] origin-left"              
+                  />
+                </div>
+            </motion.div>
 
           <motion.div
             className="inline-block"
@@ -148,12 +155,12 @@ export default function ScrollReveal() {
 
 
           <motion.div
-            className="text-base lg:text-[32px] 2xl:text-[64px] h-20 leading-[5rem] 2xl:h-28 2xl:leading-[7rem] flex items-center text-center"
+            className="text-base lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem] flex items-center text-center"
             style={{ opacity: innerTextOpacity, scale: scaleText }}
           >
             <motion.img
               src="/sec3_03.png"
-                className="w-auto max-w-[60px] lg:max-w-none mx-2 origin-left"              
+                className="w-[32px] lg:w-auto max-w-[60px] lg:max-w-none mx-2 origin-left"              
                style={{
                 scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
                 opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),

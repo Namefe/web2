@@ -4,6 +4,16 @@
 
 @import "pretendard/dist/web/static/pretendard.css";
 
+@font-face {
+  font-family: 'CUL';
+  src: url('./Fonts/CUL/Vortigra.otf') format('opentype');
+  font-style: normal;
+}
+
+.en {
+  font-family: 'CUL';
+}
+
 body {
   margin: 0;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",

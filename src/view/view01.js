@@ -62,16 +62,16 @@ const View01 = () => {
   />
 </div>
       </div>
-      <div className="sm:text-left ml-40 absolute w-full font-bold text-white  bottom-9">
+      <div className="sm:text-left px-40 absolute w-full font-bold text-white  bottom-9">
         <div className="mb-20 ">
           <p className="m-0 text-[44px] sm:text-[60px] lg:text-[94px] xl:text-[120px] 2xl:text-[152px] leading-none font-sans">
-            THE <span className="font-myfont text-[35px] sm:text-[50px] lg:text-[80px] xl:text-[100px] align-baseline">CUL</span>TURE,
+            THE <span className="en text-[35px] sm:text-[50px] lg:text-[80px] xl:text-[100px] 2xl:text-[130px] align-baseline font-normal">CUL</span>TURE,
           </p>
           <p className="m-0 text-[44px] sm:text-[60px] lg:text-[94px] xl:text-[120px] 2xl:text-[152px] leading-none font-sans">
-            THE <span className="font-myfont text-[35px] sm:text-[50px] lg:text-[80px] xl:text-[100px] align-baseline">FU</span>TURE
+            THE <span className="en text-[35px] sm:text-[50px] lg:text-[80px] xl:text-[100px] 2xl:text-[130px] align-baseline font-normal">FU</span>TURE
           </p>
         </div>
-        <div className="text-right text-white bottom-[50vh] text-xs sm:text-base font-medium ">
+        <div className="text-right text-white text-xs sm:text-base font-medium relative z-20">
           <span className="opacity-90 text-[25px] sm:text-[30px] xl:text-[50px] z-40">We invest in the future.</span>
         </div>
       </div>

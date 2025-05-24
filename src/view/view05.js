@@ -234,7 +234,7 @@ const View05 = () => {
       <div
           className="flex gap-4"
           style={{
-            transform: `translateX(calc(-320px - ${relativeScroll * 0.6}px))`,
+            transform: `translateX(calc(-320px - ${relativeScroll * 0.1}px))`,
             transition: "transform 0.1s linear",
           }}
         >
@@ -249,7 +249,7 @@ const View05 = () => {
           <div
             className="flex gap-4"
             style={{
-            transform: `translateX(calc(-300px + ${relativeScroll * 0.6}px))`,
+            transform: `translateX(calc(-300px + ${relativeScroll * 0.1}px))`,
             transition: "transform 0.1s linear",
             }}
             >
@@ -264,7 +264,7 @@ const View05 = () => {
           <div
             className="flex gap-4"
             style={{
-            transform: `translateX(calc(-320px - ${relativeScroll * 0.6}px))`,
+            transform: `translateX(calc(-320px - ${relativeScroll * 0.1}px))`,
              transition: "transform 0.1s linear",
             }}
           >
