@@ -38,7 +38,7 @@ const View05 = () => {
               className="col-span-8 object-cover w-full h-auto transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className=" absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block  text-[30px]">
@@ -52,7 +52,7 @@ const View05 = () => {
               className="block col-span-4  w-full self-end transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block   text-[30px]">
@@ -67,7 +67,7 @@ const View05 = () => {
               className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block   text-[30px]">
@@ -81,7 +81,7 @@ const View05 = () => {
               className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block  text-[30px]">
@@ -96,7 +96,7 @@ const View05 = () => {
                 className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
               />
               <div
-                style={{ cursor: "url('/hover.png') 0 0, auto" }}
+                style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
               >
                 <a className="text-white iniline-block  text-[30px]">
@@ -110,7 +110,7 @@ const View05 = () => {
                 className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
               />
               <div
-                style={{ cursor: "url('/hover.png') 0 0, auto" }}
+                style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
               >
                 <a className="text-white iniline-block text-[30px]">
@@ -126,7 +126,7 @@ const View05 = () => {
                 className="block col-span-8 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
               />
               <div
-                style={{ cursor: "url('/hover.png') 0 0, auto" }}
+                style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
               >
                 <a className="text-white iniline-block  text-[30px]">
@@ -140,7 +140,7 @@ const View05 = () => {
                 className="self-start  block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
               />
               <div
-                style={{ cursor: "url('/hover.png') 0 0, auto" }}
+                style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
               >
                 <a className="text-white iniline-block   text-[30px]">
@@ -155,7 +155,7 @@ const View05 = () => {
               className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block   text-[30px]">
@@ -169,7 +169,7 @@ const View05 = () => {
               className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block   text-[30px]">
@@ -183,7 +183,7 @@ const View05 = () => {
               className="block col-span-4 object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block  text-[30px]">
@@ -197,7 +197,7 @@ const View05 = () => {
               className="block object-cover w-full transition duration-300 group-hover:brightness-50 group-hover:scale-105"
             />
             <div
-              style={{ cursor: "url('/hover.png') 0 0, auto" }}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/hover.png) 0 0, auto` }}
               className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <a className="text-white iniline-block  text-[30px]">
@@ -210,14 +210,7 @@ const View05 = () => {
           </div>
         </div>
       </section>
-      {/*SECTION6 PC 끝 */}
 
-      {/* <section className='overflow-hidden'>
-    <div className='flex'>1섹션 : 이미지 3개씩</div>
-    <div>2섹션</div>
-    <div>3섹션</div>
-
-</section> */}
 
      <section
       ref={sectionRef}

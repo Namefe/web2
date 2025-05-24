@@ -1,6 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useRef, useState } from "react";
+import { Routes, Route } from "react-router-dom";import { useRef, useState } from "react";
 import HomePage from "./view/HomePage";
 import Artist from "./view/Artist";
 import { Link } from "react-router-dom";
@@ -87,7 +86,7 @@ function App() {
   );
 
   return (
-    <Router>
+<>
       {isMenuOpen && <Menu />}
       <Routes>
         <Route
@@ -102,7 +101,7 @@ function App() {
         <Route path="/artists" element={<Artist />} />
       </Routes>
       <Footer />
-    </Router>
+      </>
   );
 }
 
