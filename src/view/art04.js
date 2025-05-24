@@ -5,12 +5,12 @@ import "swiper/css/effect-coverflow";
 import { useRef } from "react";
 
 const images = [
-  { src: "/artsec6_01.png" },
-  { src: "/artsec6_02.png" },
-  { src: "/artsec6_03.png" },
-  { src: "/artsec6_01.png" },
-  { src: "/artsec6_02.png" },
-  { src: "/artsec6_03.png" },
+  { src: `${process.env.PUBLIC_URL}/artsec6_01.png` },
+  { src: `${process.env.PUBLIC_URL}/artsec6_02.png` },
+  { src: `${process.env.PUBLIC_URL}/artsec6_03.png` },
+  { src: `${process.env.PUBLIC_URL}/artsec6_01.png` },
+  { src: `${process.env.PUBLIC_URL}/artsec6_02.png` },
+  { src: `${process.env.PUBLIC_URL}/artsec6_03.png` },
 ];
 
 export default function SlideGallery() {
@@ -40,7 +40,7 @@ export default function SlideGallery() {
 
         {/* 버튼 */}
         <button onClick={prevSlide} className="absolute left-[50px] lg:left-2 top-1/2 -translate-y-1/2 z-20">
-          <img src="/left.png" alt="prev" />
+        <img src={process.env.PUBLIC_URL + "/left.png"} alt="prev" />
         </button>
         <div className="relative max-w-7xl mx-auto overflow-hidden flex justify-start pl-[100px]">
           <Swiper
@@ -75,7 +75,7 @@ export default function SlideGallery() {
         </div>
 
         <button onClick={nextSlide} className="absolute right-[50px] lg:right-2 top-1/2 -translate-y-1/2 z-20">
-          <img src="/right.png" alt="next" />
+        <img src={process.env.PUBLIC_URL + "/right.png"} alt="next" />
         </button>
       </div>
 

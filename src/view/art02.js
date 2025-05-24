@@ -4,7 +4,7 @@ const accordionData = [
   {
     title: "aespa",
     subtitle: "THE 5TH MINI ALBUM - WHIPLASH",
-    image: "/artist-logo.png",
+    image: { src: `${process.env.PUBLIC_URL}/artist-logo.png` },
     gradient:
       "linear-gradient(90deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.40) 48.5%, rgba(255, 255, 255, 0.20) 100%)",
     content: (
@@ -30,7 +30,7 @@ const accordionData = [
   {
     title: "RIIZE",
     subtitle: "THE 1ST MINI ALBUM - RIIZING",
-    image: "/artist-logo.png",
+    image: { src: `${process.env.PUBLIC_URL}/artist-logo.png` },
     gradient:
       "linear-gradient(90deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.20) 48.5%, rgba(255, 255, 255, 0.00) 100%)",
 
@@ -57,7 +57,7 @@ const accordionData = [
   {
     title: "NCT127",
     subtitle: "THE 6TH ALBUM - WLAK",
-    image: "/artist-logo.png",
+    image: { src: `${process.env.PUBLIC_URL}/artist-logo.png` },
     gradient:
       "linear-gradient(90deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.10) 48.5%, rgba(255, 255, 255, 0.40) 100%)",
     content: (
@@ -83,7 +83,7 @@ const accordionData = [
   {
     title: "Hearts2Hearts",
     subtitle: "THE 1ST SINGLE ALBUM - THE CHASE",
-    image: "/artist-logo.png",
+    image: { src: `${process.env.PUBLIC_URL}/artist-logo.png` },
     gradient:
       "linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.40) 48.5%, rgba(255, 255, 255, 0.20) 100%)",
     content: (
@@ -109,7 +109,7 @@ const accordionData = [
   {
     title: "Red Velvet",
     subtitle: "THE 7TH MINI ALBUM - COSMIC",
-    image: "/artist-logo.png",
+    image: { src: `${process.env.PUBLIC_URL}/artist-logo.png` },
     gradient:
       "linear-gradient(90deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.20) 48.5%, rgba(255, 255, 255, 0.00) 100%)",
     content: (
@@ -163,7 +163,8 @@ const Art02 = () => {
               </div>
             </div>
             <div className="mr-4">
-              {openIndex === index ? <img src="/up.png" alt="Arrow Up" /> : <img src="/down.png" alt="Arrow Down" />}
+              {openIndex === index ?<img src={process.env.PUBLIC_URL + "/up.png"} alt="Arrow up" />: <img src={process.env.PUBLIC_URL + "/down.png"} alt="Arrow up" />}
+
             </div>
           </button>
 
@@ -177,7 +178,7 @@ const Art02 = () => {
           >
             <div className="p-4 bg-black text-sm leading-relaxed">
               <div className="mt-4 mb-6 flex justify-center">
-                <img src={item.image} alt={`${item.title} Image`} className="w-[890px] h-auto " />
+                <img src={item.image.src} alt={`${item.title} Image`} className="w-[890px] h-auto " />
               </div>
               <div>{item.content}</div>
             </div>
