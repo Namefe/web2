@@ -96,15 +96,22 @@ export default function ScrollReveal() {
           >
             SM Entertainment는 1995년 설립 이후&nbsp;
 
-            <motion.img
-              src="/sec3_01.png"
-                className="w-auto max-w-[60px] lg:max-w-none origin-left"              
-                style={{
-                scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-                opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-                transformOrigin: "left center",
-              }}
-            />
+            <motion.div className="inline-block relative w-[60px] lg:w-[80px] h-[60px] lg:h-[80px]">
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    clipPath: useTransform(scrollYProgress, [0.6, 0.65], [
+                      'inset(0 50% 0 50%)',
+                      'inset(0 0% 0 0%)'
+                    ])
+                  }}
+                >
+                    <img
+                      src="/sec3_01.png"
+                      className="w-full h-full object-contain"              
+                    />
+                </motion.div>
+            </motion.div>
               </motion.div>
 
 
@@ -128,19 +135,23 @@ export default function ScrollReveal() {
             최고의 인재와 퍼포먼스로 세계에
           </motion.div>
 
-            <motion.div className="flex-none w-[150px] origin-center overflow-hidden"
-             style={{
-              scaleX,
-              // opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-           
-            }}>
-                <div className="w-[150px]">
-
-                  <img
-                    src="/sec3_02.png"
-                        className="w-[150px] origin-left"              
-                  />
-                </div>
+            <motion.div 
+              className="flex-none h-full origin-center relative w-[150px] h-[150px]"
+            >
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    clipPath: useTransform(scrollYProgress, [0.6, 0.65], [
+                      'inset(0 50% 0 50%)',
+                      'inset(0 0% 0 0%)'
+                    ])
+                  }}
+                >
+                    <img
+                      src="/sec3_02.png"
+                      className="w-full h-full object-contain"              
+                    />
+                </motion.div>
             </motion.div>
 
           <motion.div
@@ -158,15 +169,22 @@ export default function ScrollReveal() {
             className="text-base lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem] flex items-center text-center"
             style={{ opacity: innerTextOpacity, scale: scaleText }}
           >
-            <motion.img
-              src="/sec3_03.png"
-                className="w-[32px] lg:w-auto max-w-[60px] lg:max-w-none mx-2 origin-left"              
-               style={{
-                scaleX: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-                opacity: useTransform(scrollYProgress, [0.6, 0.65], [0, 1]),
-                transformOrigin: "left center",
-              }}
-            />
+            <motion.div className="inline-block relative w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] mx-2">
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    clipPath: useTransform(scrollYProgress, [0.6, 0.65], [
+                      'inset(0 50% 0 50%)',
+                      'inset(0 0% 0 0%)'
+                    ])
+                  }}
+                >
+                    <img
+                      src="/sec3_03.png"
+                      className="w-full h-full object-contain"              
+                    />
+                </motion.div>
+            </motion.div>
 
             글로벌 1등 기업으로 도약하겠습니다.
           </motion.div>
