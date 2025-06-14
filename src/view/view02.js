@@ -98,14 +98,14 @@ export default function ScrollReveal() {
 
             <motion.div
             className="inline-block"
-            style={{
-              x: useTransform(scrollYProgress, [0.6, 0.65], [30, 10]), 
-            }}
+            // style={{
+            //   x: useTransform(scrollYProgress, [0.6, 0.65], [30, 10]), 
+            // }}
           >
            SM Entertainment는 1995년 설립 이후&nbsp;
           </motion.div>
 
-            <motion.div className="flex-none h-full origin-center relative w-[150px] h-[150px]">
+            <motion.div className="flex-none h-full origin-center relative w-[60px] lg:w-[150px] mx-2 lg:mx-0 2xl:mx-4">
                 <motion.div
                   className="absolute inset-0"
                   style={{
@@ -134,15 +134,15 @@ export default function ScrollReveal() {
 
           <motion.div
             className="inline-block"
-            style={{
-              x: useTransform(scrollYProgress, [0.6, 0.65], [0, -30]), 
-            }}
+            // style={{
+            //   x: useTransform(scrollYProgress, [0.6, 0.65], [0, -30]), 
+            // }}
           >
             최고의 인재와 퍼포먼스로 세계에
           </motion.div>
 
             <motion.div 
-              className="flex-none h-full origin-center relative w-[150px] h-[150px]"
+              className="flex-none h-full origin-center relative w-[60px] lg:w-[150px]  mx-2 lg:mx-0 2xl:mx-4"
             >
                 <motion.div
                   className="absolute inset-0"
@@ -159,9 +159,9 @@ export default function ScrollReveal() {
 
           <motion.div
             className="inline-block"
-            style={{
-              x: useTransform(scrollYProgress, [0.6, 0.65], [0, 30]), 
-            }}
+            // style={{
+            //   x: useTransform(scrollYProgress, [0.6, 0.65], [0, 30]), 
+            // }}
           >
             '한류'를 알리며
           </motion.div>
@@ -172,7 +172,7 @@ export default function ScrollReveal() {
             className="text-[13px] lg:text-[32px] 2xl:text-[64px]  h-10 leading-[2.5rem] 2xl:h-28 2xl:leading-[7rem] flex items-center text-center"
             style={{ opacity: innerTextOpacity, scale: scaleText }}
           >
-            <motion.div className="inline-block relative w-[40px] lg:w-[60px] 2xl:w-[80px]  2xl:h-[80px] h-[40px] lg:h-[60px]">
+            <motion.div className="inline-block relative w-[20px] lg:w-[60px] 2xl:w-[80px]  2xl:h-[80px] h-[20px] lg:h-[60px]  mx-2 lg:mx-0 2xl:mx-4">
                 <motion.div
                   className="absolute inset-0"
                   style={{
@@ -187,9 +187,9 @@ export default function ScrollReveal() {
             </motion.div>
             <motion.div
             className="inline-block"
-            style={{
-              x: useTransform(scrollYProgress, [0.6, 0.65], [0, 30]), 
-            }}
+            // style={{
+            //   x: useTransform(scrollYProgress, [0.6, 0.65], [0, 30]), 
+            // }}
           >
             글로벌 1등 기업으로 도약하겠습니다.
           </motion.div>
